@@ -18,6 +18,10 @@ if %errorlevel% equ 0 (
 )
 
 :: Check common Git locations
+if exist "%LOCALAPPDATA%\MinGit\cmd\git.exe" (
+    set "GIT_CMD=%LOCALAPPDATA%\MinGit\cmd\git.exe"
+    goto git_found
+)
 if exist "C:\Program Files\Git\cmd\git.exe" (
     set "GIT_CMD=C:\Program Files\Git\cmd\git.exe"
     goto git_found
@@ -43,28 +47,28 @@ if exist "C:\ProgramData\chocolatey\bin\git.exe" (
     goto git_found
 )
 
-:: Try installing via winget if not found
-echo [INFO] Git was not detected. Attempting to install Git via winget...
-where winget >nul 2>nul
-if %errorlevel% neq 0 goto git_not_found
+:: Set up portable MinGit if not installed (requires no administrator rights)
+echo [INFO] Git was not detected on your system.
+echo [INFO] Downloading lightweight portable Git (no admin rights needed)...
+if not exist "%LOCALAPPDATA%\MinGit" mkdir "%LOCALAPPDATA%\MinGit"
 
-winget install --id Git.Git -e --source winget --accept-source-agreements --accept-package-agreements --silent
-if exist "C:\Program Files\Git\cmd\git.exe" (
-    set "GIT_CMD=C:\Program Files\Git\cmd\git.exe"
-    goto git_found
+curl.exe -L -o "%TEMP%\mingit.zip" "https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/MinGit-2.48.1-64-bit.zip"
+if %errorlevel% equ 0 (
+    echo [INFO] Extracting portable Git...
+    tar.exe -xf "%TEMP%\mingit.zip" -C "%LOCALAPPDATA%\MinGit"
+    del "%TEMP%\mingit.zip" >nul 2>nul
 )
-if exist "%LOCALAPPDATA%\Programs\Git\cmd\git.exe" (
-    set "GIT_CMD=%LOCALAPPDATA%\Programs\Git\cmd\git.exe"
+
+if exist "%LOCALAPPDATA%\MinGit\cmd\git.exe" (
+    set "GIT_CMD=%LOCALAPPDATA%\MinGit\cmd\git.exe"
     goto git_found
 )
 
 :git_not_found
 echo.
 echo ===================================================================
-echo  [!] Git is not installed on your system.
-echo ===================================================================
-echo  Please download and install Git (takes 1 minute):
-echo  https://git-scm.com/download/win
+echo  [!] Could not set up Git automatically.
+echo  Please download and install Git from: https://git-scm.com/download/win
 echo ===================================================================
 echo.
 pause
@@ -85,23 +89,23 @@ if not exist ".git" (
 "%GIT_CMD%" config user.email "sukhman@dawatrestaurant.com"
 
 :: Set remote
-echo Step 2: Setting remote origin...
+echo Step 2: Configuring GitHub repository remote...
 "%GIT_CMD%" remote remove origin >nul 2>nul
 "%GIT_CMD%" remote add origin https://github.com/sukhman123456/mukariadawat.git
 "%GIT_CMD%" branch -M main
 
-:: Sync remote
-echo Step 3: Fetching existing files from GitHub...
-"%GIT_CMD%" fetch origin main >nul 2>nul
-"%GIT_CMD%" pull origin main --allow-unrelated-histories --no-rebase -m "Merge existing GitHub files" >nul 2>nul
-
-:: Stage all files
-echo Step 4: Staging all files including src and public...
+:: Stage all files first
+echo Step 3: Staging all files including src, public, and project assets...
 "%GIT_CMD%" add -A
 
 :: Commit
-echo Step 5: Creating commit...
+echo Step 4: Creating commit with all project files...
 "%GIT_CMD%" commit -m "Upload complete Dawat Restaurant project with src, routes, components and assets"
+
+:: Fetch and sync remote
+echo Step 5: Syncing with existing GitHub files...
+"%GIT_CMD%" fetch origin main >nul 2>nul
+"%GIT_CMD%" merge origin/main --allow-unrelated-histories -X ours -m "Merge existing GitHub files" >nul 2>nul
 
 :: Push
 echo.
@@ -117,8 +121,9 @@ if %errorlevel% neq 0 (
 
 echo.
 echo ===================================================================
-echo  Upload process finished. Check your repository:
-echo  https://github.com/sukhman123456/mukariadawat
+echo  Upload process finished!
+echo  Check your repository: https://github.com/sukhman123456/mukariadawat
 echo ===================================================================
 echo.
 pause
+
