@@ -24,9 +24,9 @@ export function Footer() {
           className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 size-96 rounded-full bg-[#D49B55]/5 blur-3xl"
         />
 
-        <div className="relative mx-auto max-w-[1360px] px-5 py-14 lg:px-10 lg:py-20">
+        <div className="relative mx-auto max-w-[1360px] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-20 pb-20 lg:pb-20">
           {/* Main 3-Column Grid */}
-          <div className="grid gap-12 lg:grid-cols-3 lg:gap-14">
+          <div className="grid gap-10 lg:grid-cols-3 lg:gap-14">
             {/* COLUMN 1: BRAND HERITAGE & REPUTATION */}
             <div className="flex flex-col justify-between">
               <div>
@@ -52,7 +52,7 @@ export function Footer() {
                 </div>
 
                 {/* Official Social Media & WhatsApp Connect */}
-                <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                <div className="mt-6 flex flex-col xs:flex-row items-stretch xs:items-center gap-2.5">
                   <a
                     href={site.facebook}
                     target="_blank"
@@ -60,12 +60,12 @@ export function Footer() {
                     title="Visit Dawat Restaurant Mukerian on Facebook"
                     className="group inline-flex items-center gap-2 rounded-xl border border-sky-900/60 bg-[#0F172A]/40 p-2 px-3 text-xs text-sky-300 hover:border-sky-500 hover:text-white transition-all shadow-md"
                   >
-                    <div className="grid size-6 place-items-center rounded-lg bg-sky-950/80 text-sky-400 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                    <div className="grid size-6 place-items-center rounded-lg bg-sky-950/80 text-sky-400 group-hover:bg-sky-600 group-hover:text-white transition-colors shrink-0">
                       <FacebookIcon size={14} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-[9px] uppercase tracking-wider text-stone-400 block leading-tight">Official Facebook</span>
-                      <span className="font-semibold text-sky-200 group-hover:text-white">{site.facebookHandle}</span>
+                      <span className="font-semibold text-sky-200 group-hover:text-white truncate block">{site.facebookHandle}</span>
                     </div>
                   </a>
 
@@ -76,12 +76,12 @@ export function Footer() {
                     title="Chat on WhatsApp with Dawat Restaurant"
                     className="group inline-flex items-center gap-2 rounded-xl border border-emerald-900/60 bg-[#062014]/40 p-2 px-3 text-xs text-emerald-300 hover:border-emerald-500 hover:text-white transition-all shadow-md"
                   >
-                    <div className="grid size-6 place-items-center rounded-lg bg-emerald-950/80 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <div className="grid size-6 place-items-center rounded-lg bg-emerald-950/80 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0">
                       <WhatsAppIcon size={14} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-[9px] uppercase tracking-wider text-stone-400 block leading-tight">WhatsApp Order</span>
-                      <span className="font-semibold text-emerald-200 group-hover:text-white">{site.whatsapp}</span>
+                      <span className="font-semibold text-emerald-200 group-hover:text-white truncate block">{site.whatsapp}</span>
                     </div>
                   </a>
                 </div>
@@ -188,33 +188,33 @@ export function Footer() {
                   <span>{t("book_a_table")}</span>
                 </button>
 
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                   <a
                     href={site.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1 rounded-full border border-emerald-700/60 bg-emerald-950/40 py-2.5 text-xs font-medium text-emerald-300 hover:bg-emerald-950/80 transition-colors"
+                    className="inline-flex items-center justify-center gap-1 rounded-full border border-emerald-700/60 bg-emerald-950/40 py-2 sm:py-2.5 px-1 text-[11px] sm:text-xs font-medium text-emerald-300 hover:bg-emerald-950/80 transition-colors"
                   >
-                    <WhatsAppIcon className="size-3 text-emerald-400" />
-                    <span>WhatsApp</span>
+                    <WhatsAppIcon className="size-3 text-emerald-400 shrink-0" />
+                    <span className="truncate">WhatsApp</span>
                   </a>
                   <a
                     href={site.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Dawat Restaurant Mukerian Facebook"
-                    className="inline-flex items-center justify-center gap-1 rounded-full border border-sky-800/60 bg-sky-950/40 py-2.5 text-xs font-medium text-sky-300 hover:bg-sky-950/80 transition-colors"
+                    className="inline-flex items-center justify-center gap-1 rounded-full border border-sky-800/60 bg-sky-950/40 py-2 sm:py-2.5 px-1 text-[11px] sm:text-xs font-medium text-sky-300 hover:bg-sky-950/80 transition-colors"
                   >
-                    <FacebookIcon className="size-3 text-sky-400" />
-                    <span>Facebook</span>
+                    <FacebookIcon className="size-3 text-sky-400 shrink-0" />
+                    <span className="truncate">Facebook</span>
                   </a>
                   <a
                     href={site.directionsLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1 rounded-full border border-stone-800 bg-stone-900/90 py-2.5 text-xs font-medium text-stone-200 hover:border-[#D49B55] hover:text-white transition-colors"
+                    className="inline-flex items-center justify-center gap-1 rounded-full border border-stone-800 bg-stone-900/90 py-2 sm:py-2.5 px-1 text-[11px] sm:text-xs font-medium text-stone-200 hover:border-[#D49B55] hover:text-white transition-colors"
                   >
-                    <Navigation className="size-3 text-[#D49B55]" />
+                    <Navigation className="size-3 text-[#D49B55] shrink-0" />
                     <span>Map</span>
                   </a>
                 </div>
@@ -223,9 +223,9 @@ export function Footer() {
           </div>
 
           {/* Bottom Bar with Back to Top */}
-          <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stone-800/80 pt-6 text-xs text-stone-500">
+          <div className="mt-12 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stone-800/80 pt-6 text-xs text-stone-500 text-center sm:text-left">
             <p>© {new Date().getFullYear()} Dawat Restaurant & SKY Lounge, Mukerian. All rights reserved.</p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
               <span className="text-[11px] text-stone-400">
                 Opp. P.W.D. Rest House, G.T. Road, Mukerian (Pb)
               </span>

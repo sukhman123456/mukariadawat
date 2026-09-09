@@ -119,18 +119,19 @@ export function HeroRestaurantShowcase() {
         </div>
 
         {/* Top Interactive Tabs */}
-        <div className="relative z-10 mb-2.5 flex flex-wrap items-center justify-between gap-2 border-b border-stone-800/80 pb-2.5 sm:mb-3 sm:pb-3">
+        <div className="relative z-10 mb-2.5 flex items-center justify-between gap-2 border-b border-stone-800/80 pb-2.5 sm:mb-3 sm:pb-3 overflow-x-auto no-scrollbar">
           {/* Live Status Badge */}
-          <div className="flex items-center gap-2 rounded-full border border-emerald-800/60 bg-emerald-950/50 px-3 py-1 text-[11px] font-medium text-emerald-300 backdrop-blur-md">
+          <div className="flex items-center gap-1.5 sm:gap-2 rounded-full border border-emerald-800/60 bg-emerald-950/50 px-2.5 sm:px-3 py-1 text-[10px] sm:text-[11px] font-medium text-emerald-300 backdrop-blur-md shrink-0">
             <span className="relative flex size-2">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
             </span>
-            <span>Welcoming Guests · Mukerian</span>
+            <span className="hidden xs:inline">Welcoming Guests · Mukerian</span>
+            <span className="xs:hidden">Open Now</span>
           </div>
 
           {/* Tab Selector Buttons */}
-          <div className="flex flex-wrap items-center gap-1 sm:gap-1.5">
+          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
             {SHOWCASE_SLIDES.map((slide, idx) => {
               const isSelected = idx === activeIndex;
               return (
@@ -138,7 +139,7 @@ export function HeroRestaurantShowcase() {
                   key={slide.id}
                   onClick={() => setActiveIndex(idx)}
                   className={cn(
-                    "flex items-center gap-1.5 rounded-full px-2.5 sm:px-3.5 py-1 text-[11px] sm:text-xs font-medium transition-all duration-300",
+                    "flex items-center gap-1.5 rounded-full px-2.5 sm:px-3.5 py-1 text-[10.5px] sm:text-xs font-medium transition-all duration-300 min-h-[32px] sm:min-h-[36px]",
                     isSelected
                       ? "bg-gradient-to-r from-[#D49B55] via-[#E5A84B] to-[#C08845] text-stone-950 font-semibold shadow-md shadow-[#D49B55]/20 scale-105"
                       : "bg-stone-900/80 text-stone-300 border border-stone-800/80 hover:border-[#D49B55]/50 hover:text-white"
@@ -146,16 +147,16 @@ export function HeroRestaurantShowcase() {
                   aria-pressed={isSelected}
                 >
                   <span className="text-xs">{slide.icon}</span>
-                  <span className="hidden xs:inline">{slide.tabLabel}</span>
-                  <span className="xs:hidden">{slide.tabLabel.split(" ")[0]}</span>
+                  <span className="hidden sm:inline">{slide.tabLabel}</span>
+                  <span className="sm:hidden">{slide.tabLabel.split(" ")[0]}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Image Showcase Window */}
-        <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl border border-stone-800/90 bg-stone-950">
+        {/* Image Showcase Window (4:3 on mobile for ample text space, 16:9 on desktop) */}
+        <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl border border-stone-800/90 bg-stone-950">
           {/* Layered Images with Cross-Fade */}
           {SHOWCASE_SLIDES.map((slide, idx) => (
             <div
@@ -214,17 +215,18 @@ export function HeroRestaurantShowcase() {
           </button>
 
           {/* Top Overlaid Glass Badges */}
-          <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 z-20 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
+          <div className="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 right-2.5 sm:right-4 z-20 flex items-center justify-between gap-2 pointer-events-none">
             {/* Left Location & Brand Pill */}
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-[#D49B55]/50 bg-black/75 px-3 py-1 text-[11px] font-semibold text-[#D49B55] backdrop-blur-md shadow-lg">
-              <Sparkles className="size-3 text-[#E5A84B] animate-pulse" />
-              <span>Dawat Restaurant & SKY Lounge</span>
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-[#D49B55]/50 bg-black/80 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold text-[#D49B55] backdrop-blur-md shadow-lg">
+              <Sparkles className="size-2.5 sm:size-3 text-[#E5A84B]" />
+              <span className="hidden xs:inline">Dawat Restaurant & SKY Lounge</span>
+              <span className="xs:hidden">Dawat Mukerian</span>
             </div>
 
             {/* Right Rating Pill */}
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-stone-700/80 bg-black/75 px-3 py-1 text-[11px] font-medium text-stone-200 backdrop-blur-md shadow-lg">
+            <div className="inline-flex items-center gap-1 rounded-full border border-stone-700/80 bg-black/80 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-medium text-stone-200 backdrop-blur-md shadow-lg">
               <span className="text-[#FBBF24]">★</span>
-              <span>4.0 (965+ Reviews) · Mukerian</span>
+              <span>4.0 (965+)</span>
             </div>
           </div>
 

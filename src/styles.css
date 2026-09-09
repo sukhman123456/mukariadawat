@@ -113,10 +113,14 @@
 @layer base {
   * {
     border-color: var(--color-border);
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+    max-width: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
@@ -124,6 +128,9 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+    max-width: 100%;
+    position: relative;
   }
 
   h1,
@@ -133,7 +140,14 @@
     font-family: var(--font-display);
     font-weight: 400;
   }
+
+  /* Responsive image safety */
+  img, svg, video {
+    max-width: 100%;
+    height: auto;
+  }
 }
+
 
 @utility font-gurmukhi {
   font-family: var(--font-gurmukhi);
@@ -228,4 +242,28 @@
     scroll-behavior: auto;
   }
 }
+
+/* Custom scrollbar hiding for horizontal pill bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* iOS Safe Area Padding */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.mb-safe {
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Standard Mobile Touch Minimum */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
 

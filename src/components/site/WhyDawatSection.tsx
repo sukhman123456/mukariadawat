@@ -137,12 +137,12 @@ export function WhyDawatSection() {
           />
 
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4 text-center md:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="grid size-14 shrink-0 place-items-center rounded-2xl border border-[#D49B55]/40 bg-[#251D16] text-[#E5B869] shadow-inner">
                 <Clock className="size-7 animate-pulse" />
               </div>
               <div>
-                <div className="flex items-center justify-center md:justify-start gap-2">
+                <div className="flex items-center justify-center sm:justify-start gap-2">
                   <span className="relative flex size-2.5">
                     <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
@@ -154,7 +154,7 @@ export function WhyDawatSection() {
                 <h3 className="mt-1 font-display text-xl sm:text-2xl font-medium text-[#FAF5EE]">
                   {lang === "pa" ? "ਸਵੇਰੇ 11:00 ਵਜੇ ਤੋਂ ਰਾਤ 11:30 ਵਜੇ ਤੱਕ" : "11:00 AM — 11:30 PM (All 7 Days)"}
                 </h3>
-                <p className="mt-1 text-xs text-stone-400">
+                <p className="mt-1 text-xs text-stone-400 max-w-xl">
                   {lang === "pa"
                     ? "ਡਾਇਨ-ਇਨ, ਟੇਕਅਵੇ ਅਤੇ SKY ਲਾਊਂਜ ਬਾਰ ਹਰ ਰੋਜ਼ ਚਾਲੂ ਹਨ।"
                     : "Full dine-in service, takeaway packaging, and SKY Lounge bar service available every day."}
@@ -162,10 +162,10 @@ export function WhyDawatSection() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex w-full sm:w-auto flex-col sm:flex-row items-center gap-2.5 sm:gap-3 shrink-0">
               <a
                 href={site.phoneHref}
-                className="luxury-shimmer inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] via-[#E5B869] to-[#C08845] px-6 py-3 text-xs sm:text-sm font-semibold text-stone-950 shadow-lg shadow-[#D49B55]/20 hover:scale-105 active:scale-95 transition-all"
+                className="luxury-shimmer w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] via-[#E5B869] to-[#C08845] px-6 py-3 text-xs sm:text-sm font-semibold text-stone-950 shadow-lg shadow-[#D49B55]/20 hover:scale-105 active:scale-95 transition-all"
               >
                 <Phone className="size-4" />
                 <span>{lang === "pa" ? "ਹੁਣੇ ਕਾਲ ਕਰੋ" : "Call to Reserve"}</span>
@@ -174,7 +174,7 @@ export function WhyDawatSection() {
                 href={site.directionsLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-5 py-3 text-xs sm:text-sm font-medium text-stone-300 hover:text-white hover:border-[#D49B55] transition-all"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-5 py-3 text-xs sm:text-sm font-medium text-stone-300 hover:text-white hover:border-[#D49B55] transition-all active:scale-95"
               >
                 <MapPin className="size-4 text-rose-400" />
                 <span>{lang === "pa" ? "ਰਾਹ ਵੇਖੋ" : "Get Directions"}</span>

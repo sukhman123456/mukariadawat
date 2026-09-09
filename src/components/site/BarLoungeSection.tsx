@@ -217,38 +217,38 @@ export function BarLoungeSection({
           </div>
 
           {/* Results Summary + View Mode Switcher */}
-          <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto">
+          <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-3 w-full sm:w-auto">
             <span className="text-xs text-stone-400 font-sans hidden sm:inline-block">
               Showing <strong className="text-[#D49B55]">{filteredItems.length}</strong> Drinks
             </span>
 
             {/* View Mode Toggle: Classic Menu Board vs Modern Cards */}
-            <div className="inline-flex items-center rounded-xl bg-[#120F0C] border border-stone-800 p-1 shadow-inner">
+            <div className="inline-flex items-center rounded-xl bg-[#120F0C] border border-stone-800 p-0.5 sm:p-1 shadow-inner w-full sm:w-auto justify-center">
               <button
                 type="button"
                 onClick={() => setViewMode("menu")}
                 className={cn(
-                  "flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer",
+                  "flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium transition-all cursor-pointer min-h-[36px]",
                   viewMode === "menu"
                     ? "bg-[#D49B55] text-stone-950 font-semibold shadow-md"
                     : "text-stone-400 hover:text-stone-200"
                 )}
               >
-                <List className="size-3.5" />
-                <span>Menu Board View</span>
+                <List className="size-3.5 shrink-0" />
+                <span>Board<span className="hidden xs:inline"> View</span></span>
               </button>
               <button
                 type="button"
                 onClick={() => setViewMode("cards")}
                 className={cn(
-                  "flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer",
+                  "flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium transition-all cursor-pointer min-h-[36px]",
                   viewMode === "cards"
                     ? "bg-[#D49B55] text-stone-950 font-semibold shadow-md"
                     : "text-stone-400 hover:text-stone-200"
                 )}
               >
-                <LayoutGrid className="size-3.5" />
-                <span>Cards View</span>
+                <LayoutGrid className="size-3.5 shrink-0" />
+                <span>Cards<span className="hidden xs:inline"> View</span></span>
               </button>
             </div>
           </div>

@@ -127,7 +127,7 @@ function Home() {
 
           {/* Main Title */}
           <Reveal delay={100}>
-            <h1 className="mt-6 font-display text-4xl leading-[1.08] text-[#FAF5EE] sm:text-6xl lg:text-7xl max-w-4xl tracking-tight">
+            <h1 className="mt-5 sm:mt-6 font-display text-3xl xs:text-4xl sm:text-6xl lg:text-7xl leading-[1.12] sm:leading-[1.08] text-[#FAF5EE] max-w-4xl tracking-tight break-words">
               A Royal Feast of Authentic{" "}
               <span className="bg-gradient-to-r from-[#FAF5EE] via-[#D49B55] to-[#FAF5EE] bg-clip-text text-transparent">
                 North Indian
@@ -138,18 +138,18 @@ function Home() {
 
           {/* Subtitle with Gurmukhi script */}
           <Reveal delay={200}>
-            <p className="mt-6 max-w-2xl font-sans text-base sm:text-lg leading-relaxed text-stone-300/90">
+            <p className="mt-4 sm:mt-6 max-w-2xl font-sans text-xs sm:text-base leading-relaxed text-stone-300/90">
               Welcome to <strong>Dawat Restaurant & SKY Lounge</strong> (ਦਾਵਤ ਰੇਸਟੋਰੇਂਟ). Enjoy pure tandoori breads, rich gravies simmered in copper handis, and our signature SKY Lounge bar on G.T. Road, Mukerian.
             </p>
           </Reveal>
 
-          {/* Action CTAs with Animated Book a Table Button */}
-          <Reveal delay={300}>
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+          {/* Action CTAs with Balanced Mobile Stacking */}
+          <Reveal delay={300} className="w-full flex justify-center">
+            <div className="mt-7 sm:mt-9 flex w-full max-w-xl flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
               <button
                 type="button"
                 onClick={() => setBookModalOpen(true)}
-                className="luxury-shimmer inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#D49B55] via-[#F5D28E] to-[#C08845] px-8 py-3.5 text-xs sm:text-sm font-bold tracking-wider text-stone-950 shadow-2xl shadow-[#D49B55]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer ring-2 ring-[#FAF5EE]/30 animate-pulse"
+                className="luxury-shimmer w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#D49B55] via-[#F5D28E] to-[#C08845] px-8 py-3.5 text-xs sm:text-sm font-bold tracking-wider text-stone-950 shadow-2xl shadow-[#D49B55]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer ring-2 ring-[#FAF5EE]/30"
               >
                 <UtensilsCrossed className="size-4" />
                 <span>{t("book_a_table")}</span>
@@ -157,27 +157,29 @@ function Home() {
 
               <Link
                 to="/menu"
-                className="inline-flex items-center gap-2 rounded-full border border-stone-700/80 bg-stone-900/80 backdrop-blur-md px-7 py-3.5 text-xs sm:text-sm font-semibold text-stone-100 hover:border-[#D49B55] hover:text-[#D49B55] transition-all"
+                className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2 rounded-full border border-stone-700/80 bg-stone-900/80 backdrop-blur-md px-7 py-3.5 text-xs sm:text-sm font-semibold text-stone-100 hover:border-[#D49B55] hover:text-[#D49B55] transition-all"
               >
                 <span>{lang === "pa" ? "ਮੇਨੂ ਵੇਖੋ" : "Explore Dining Menu"}</span>
                 <ArrowRight className="size-4" />
               </Link>
 
-              <a
-                href="#sky-lounge"
-                className="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-black/60 backdrop-blur-md px-6 py-3.5 text-xs sm:text-sm font-medium text-stone-300 hover:border-[#38BDF8] hover:text-[#38BDF8] transition-all"
-              >
-                <Wine className="size-4 text-[#38BDF8]" />
-                SKY Bar & Lounge ↓
-              </a>
+              <div className="grid w-full sm:w-auto grid-cols-2 gap-2 sm:flex sm:gap-3">
+                <a
+                  href="#sky-lounge"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-stone-800 bg-black/60 backdrop-blur-md px-4 py-2.5 text-xs sm:text-sm font-medium text-stone-300 hover:border-[#38BDF8] hover:text-[#38BDF8] transition-all"
+                >
+                  <Wine className="size-3.5 text-[#38BDF8]" />
+                  <span>SKY Bar ↓</span>
+                </a>
 
-              <a
-                href={site.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-950/80 px-5 py-3.5 text-xs sm:text-sm font-medium text-stone-300 hover:text-white transition-all"
-              >
-                <Phone className="size-3.5 text-[#D49B55]" />
-                {site.phone}
-              </a>
+                <a
+                  href={site.phoneHref}
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-stone-800 bg-stone-950/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-stone-300 hover:text-white transition-all"
+                >
+                  <Phone className="size-3 text-[#D49B55]" />
+                  <span>Call Us</span>
+                </a>
+              </div>
             </div>
           </Reveal>
 
@@ -187,16 +189,19 @@ function Home() {
           </Reveal>
 
           {/* Highlights bar with Opening Hours */}
-          <Reveal delay={400}>
-            <div className="mt-14 grid w-full max-w-4xl grid-cols-2 gap-4 border-t border-stone-800/80 pt-8 sm:grid-cols-5">
+          <Reveal delay={400} className="w-full">
+            <div className="mt-12 sm:mt-14 grid w-full max-w-4xl grid-cols-2 gap-3.5 sm:gap-4 border-t border-stone-800/80 pt-6 sm:pt-8 sm:grid-cols-3 lg:grid-cols-5 mx-auto">
               {[
                 { label: "OPEN DAILY", val: "11:00 AM – 11:30 PM" },
                 { label: "CUISINE", val: "North Indian & Mughlai" },
                 { label: "PRICE RANGE", val: "₹200 – ₹400 / person" },
                 { label: "BAR & LOUNGE", val: "SKY Lounge (26 Drinks)" },
                 { label: "GOOGLE RATING", val: "4.0 ★ (965+ Reviews)" },
-              ].map((item) => (
-                <div key={item.label} className="text-center sm:text-left">
+              ].map((item, idx) => (
+                <div
+                  key={item.label}
+                  className={`text-center sm:text-left ${idx === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                >
                   <span className="text-[10px] font-bold tracking-[0.2em] text-[#D49B55] uppercase block">
                     {item.label}
                   </span>

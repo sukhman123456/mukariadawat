@@ -8,7 +8,7 @@ export function FloatingWhatsApp() {
   return (
     <aside
       aria-label="WhatsApp Contact"
-      className="fixed bottom-20 right-4 lg:bottom-8 lg:right-8 z-40 transition-transform duration-300 select-none"
+      className="fixed bottom-8 right-8 z-40 transition-transform duration-300 select-none hidden lg:block"
     >
       <a
         href={site.whatsappHref}

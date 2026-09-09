@@ -274,7 +274,7 @@ function CateringPage() {
                   <label className="block text-xs font-medium text-stone-300 mb-2">
                     Selected Menu Tier:
                   </label>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 xs:grid-cols-3 gap-2">
                     {["Silver Dawat", "Royal Gold Feast", "Grand Imperial Live"].map((p) => (
                       <button
                         key={p}
@@ -293,15 +293,15 @@ function CateringPage() {
                 </div>
 
                 {/* Estimate Box */}
-                <div className="mt-8 rounded-xl border border-stone-800 bg-[#0E0C0A] p-6">
-                  <div className="flex justify-between items-center">
+                <div className="mt-8 rounded-xl border border-stone-800 bg-[#0E0C0A] p-4 sm:p-6">
+                  <div className="flex flex-col xs:flex-row justify-between items-start xs:items-center gap-2">
                     <div>
                       <p className="text-xs text-stone-400">Estimated Total:</p>
-                      <p className="font-display text-3xl font-semibold text-[#D49B55] mt-1">
+                      <p className="font-display text-2xl sm:text-3xl font-semibold text-[#D49B55] mt-1">
                         ₹{estimatedTotal.toLocaleString("en-IN")}
                       </p>
                     </div>
-                    <div className="text-right text-xs text-stone-400">
+                    <div className="text-left xs:text-right text-xs text-stone-400">
                       <p>{guestsCount} guests × ₹{pricePerGuest}</p>
                       <p className="text-[10px] text-stone-500 mt-0.5">Taxes & service included</p>
                     </div>
@@ -347,7 +347,7 @@ function CateringPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       <div>
                         <label className="block text-xs text-stone-300 mb-1">Phone Number *</label>
                         <input

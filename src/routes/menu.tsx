@@ -589,8 +589,8 @@ function PremiumMenuPage() {
         {/* ======================================================== */}
         {/* 4 MAIN CATEGORY TABS (01 VEG, 02 NON-VEG, 03 DRINKS, 04 BAR) */}
         {/* ======================================================== */}
-        <div className="flex flex-col items-center justify-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-stone-800 bg-[#14110E] p-2 shadow-2xl">
+        <div className="w-full flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-2">
+          <div className="inline-flex items-center gap-1.5 sm:gap-3 rounded-2xl border border-stone-800 bg-[#14110E] p-1.5 sm:p-2 shadow-2xl min-w-max mx-auto">
             {(
               [
                 "01 — VEGETARIAN",
@@ -610,7 +610,7 @@ function PremiumMenuPage() {
                   key={tab}
                   type="button"
                   onClick={() => handleTabChange(tab)}
-                  className={`group relative flex items-center gap-2.5 rounded-xl px-5 py-3 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-sans font-medium tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                  className={`group relative flex items-center gap-2 rounded-xl px-4 py-2.5 sm:px-8 sm:py-3.5 text-[11px] sm:text-sm font-sans font-medium tracking-wider uppercase transition-all duration-300 cursor-pointer min-h-[44px] ${
                     isActive
                       ? "bg-[#D49B55] text-stone-950 font-semibold shadow-lg shadow-[#D49B55]/20 scale-[1.02]"
                       : "text-stone-300 hover:text-white hover:bg-stone-900/80 border border-transparent"
@@ -736,7 +736,7 @@ function PremiumMenuPage() {
             {/* Food Cards Grid */}
             <div
               key={activeTab + subFilter}
-              className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-in fade-in slide-in-from-bottom-3 duration-300"
+              className="mt-8 grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-in fade-in slide-in-from-bottom-3 duration-300"
             >
               {displayItems.map((item) => (
                 <div
@@ -789,7 +789,7 @@ function PremiumMenuPage() {
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5 flex flex-col flex-1 justify-between">
+                  <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
                     <div>
                       <span className="text-[10px] font-semibold text-[#D49B55] uppercase tracking-wider">
                         {item.subCategory}
@@ -805,7 +805,7 @@ function PremiumMenuPage() {
                     </div>
 
                     {/* Price & Details Arrow */}
-                    <div className="mt-5 pt-3.5 border-t border-stone-800/80 flex items-center justify-between">
+                    <div className="mt-4 sm:mt-5 pt-3.5 border-t border-stone-800/80 flex items-center justify-between">
                       <div>
                         <span className="font-display text-lg font-semibold text-[#FAF5EE]">
                           {item.price}
@@ -828,7 +828,7 @@ function PremiumMenuPage() {
             </div>
 
             {/* Official Notes from Menu */}
-            <div className="mt-16 rounded-2xl border border-stone-800 bg-[#120F0D] p-6 sm:p-8">
+            <div className="mt-16 rounded-2xl border border-stone-800 bg-[#120F0D] p-5 sm:p-8">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#D49B55] uppercase tracking-wider">
                 <Info className="size-4" /> Official Dawat Kitchen Policies
               </div>
@@ -857,17 +857,17 @@ function PremiumMenuPage() {
         )}
 
         {/* Bottom Call & Order CTA */}
-        <div className="mt-12 rounded-2xl border border-stone-800 bg-gradient-to-r from-[#1A1613] via-[#14110E] to-[#120F0D] p-8 sm:p-12 text-center">
+        <div className="mt-12 rounded-2xl border border-stone-800 bg-gradient-to-r from-[#1A1613] via-[#14110E] to-[#120F0D] p-6 sm:p-12 text-center">
           <h3 className="font-display text-2xl sm:text-3xl text-[#FAF5EE]">
             Ready to Order from Dawat?
           </h3>
           <p className="mt-2 text-xs sm:text-sm text-stone-400 max-w-lg mx-auto">
             Give us a call for fast takeaway pickups or visit our dining hall & SKY lounge for an authentic Punjabi dining feast.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a
               href={site.phoneHref}
-              className="inline-flex items-center gap-2 rounded-full bg-[#D49B55] px-7 py-3 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
+              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#D49B55] px-7 py-3 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
             >
               <Phone className="size-4" /> Call {site.phone}
             </a>
@@ -875,7 +875,7 @@ function PremiumMenuPage() {
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-6 py-3 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-500/20 transition-all"
+              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-6 py-3 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-500/20 transition-all"
             >
               <WhatsAppIcon size={16} />
               <span>WhatsApp Inquiries</span>
@@ -885,24 +885,24 @@ function PremiumMenuPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* FOOD DETAIL MODAL (Smooth Scale + Fade Animation)        */}
+      {/* FOOD DETAIL MODAL (Mobile Scrollable & Touch Friendly)   */}
       {/* ======================================================== */}
       {selectedFood && (
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-3 sm:p-4 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
           onClick={() => setSelectedFood(null)}
         >
           <div
-            className="relative max-w-2xl w-full rounded-2xl overflow-hidden bg-[#14110E] border border-stone-800 shadow-2xl animate-in zoom-in-95 duration-200"
+            className="relative max-w-2xl w-full max-h-[88dvh] overflow-y-auto rounded-2xl bg-[#14110E] border border-stone-800 shadow-2xl animate-in zoom-in-95 duration-200 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setSelectedFood(null)}
-              className="absolute top-4 right-4 z-20 grid size-10 place-items-center rounded-full bg-black/70 text-white hover:text-[#D49B55] transition-colors cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 grid size-10 place-items-center rounded-full bg-black/80 text-white hover:text-[#D49B55] transition-colors cursor-pointer touch-target shadow-xl"
               aria-label="Close food details"
             >
               <X className="size-5" />
@@ -918,7 +918,7 @@ function PremiumMenuPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#14110E] via-transparent to-black/30" />
 
               {/* Modal Top Badges */}
-              <div className="absolute top-4 left-4 flex items-center gap-2">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-2">
                 {selectedFood.category !== "DRINKS" && (
                   <span
                     className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-md ${
@@ -944,7 +944,7 @@ function PremiumMenuPage() {
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 sm:p-8">
+            <div className="p-5 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
                 <div>
                   <span className="text-xs font-semibold text-[#D49B55] uppercase tracking-wider">
@@ -974,10 +974,10 @@ function PremiumMenuPage() {
               )}
 
               {/* Action Buttons */}
-              <div className="mt-8 pt-6 border-t border-stone-800 flex flex-wrap items-center justify-between gap-4">
+              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                 <a
                   href={site.phoneHref}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#D49B55] px-6 py-2.5 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#D49B55] px-6 py-2.5 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
                 >
                   <Phone className="size-4" /> Order by Phone ({site.phone})
                 </a>
@@ -985,7 +985,7 @@ function PremiumMenuPage() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-5 py-2.5 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-500/20 transition-all"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-5 py-2.5 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-500/20 transition-all"
                 >
                   <WhatsAppIcon size={14} />
                   <span>WhatsApp Inquire</span>

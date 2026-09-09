@@ -24,7 +24,7 @@ export function DawatLogo({
       to="/"
       className={cn(
         "inline-flex items-center group transition-all duration-300 select-none",
-        isHorizontal ? "flex-row gap-3.5 text-left" : "flex-col items-center text-center",
+        isHorizontal ? "flex-row gap-2 sm:gap-3.5 text-left" : "flex-col items-center text-center",
         className
       )}
       aria-label="Dawat Restaurant Mukerian - Official Website"

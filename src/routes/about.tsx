@@ -67,11 +67,11 @@ function About() {
             <p className="text-stone-400">
               A lavish full meal usually averages around <strong className="text-[#D49B55]">{site.priceRange}</strong> per person. Whether you dine in our air-conditioned family hall, relax at the rooftop SKY Lounge, or order takeaway for home — every dish is crafted with equal dedication.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-4">
               <OrderButton variant="gold" />
               <Link
                 to="/menu"
-                className="inline-flex items-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-7 py-3 text-xs sm:text-sm font-semibold tracking-wider text-stone-200 hover:border-[#D49B55] hover:text-white transition-all shadow-md"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-7 py-3 text-xs sm:text-sm font-semibold tracking-wider text-stone-200 hover:border-[#D49B55] hover:text-white transition-all shadow-md text-center"
               >
                 View Full Menu <ArrowRight className="size-4 text-[#D49B55]" />
               </Link>
@@ -88,7 +88,7 @@ function About() {
                 loading="lazy"
                 className="w-full rounded-2xl object-cover lg:aspect-[4/5]"
               />
-              <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-stone-800/90 bg-black/85 p-4 backdrop-blur-md shadow-2xl">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 rounded-xl border border-stone-800/90 bg-black/85 p-3 sm:p-4 backdrop-blur-md shadow-2xl">
                 <p className="text-xs font-semibold text-[#D49B55]">✦ Authentic Handcrafted Dishes</p>
                 <p className="text-[11px] text-stone-300 mt-0.5">Copper handi gravies & clay tandoori flatbreads</p>
               </div>
@@ -98,8 +98,8 @@ function About() {
       </section>
 
       {/* Services & Hospitality Section */}
-      <section className="border-y border-stone-800/80 bg-gradient-to-b from-[#120F0D] via-[#0E0C0A] to-[#14110E] py-20 lg:py-28">
-        <div className="mx-auto grid max-w-[1360px] gap-12 px-5 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20 lg:px-10">
+      <section className="border-y border-stone-800/80 bg-gradient-to-b from-[#120F0D] via-[#0E0C0A] to-[#14110E] py-16 sm:py-20 lg:py-28">
+        <div className="mx-auto grid max-w-[1360px] gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20 lg:px-10">
           <Reveal>
             <div className="relative rounded-3xl border border-stone-800/90 p-2 sm:p-3 bg-gradient-to-b from-[#1C1713] to-black shadow-2xl">
               <img
@@ -110,7 +110,7 @@ function About() {
                 loading="lazy"
                 className="aspect-[4/3] w-full rounded-2xl object-cover"
               />
-              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-stone-800/90 bg-black/85 p-3.5 backdrop-blur-md">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 rounded-xl border border-stone-800/90 bg-black/85 p-3 sm:p-3.5 backdrop-blur-md">
                 <p className="text-xs font-semibold text-[#D49B55]">Clay Tandoori Specialties</p>
                 <p className="text-[10px] text-stone-300 mt-0.5">Hot butter naans, lachha parathas & rotis</p>
               </div>
@@ -136,7 +136,7 @@ function About() {
               </p>
             </address>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 border-t border-stone-800 pt-6 text-xs">
+            <div className="mt-8 grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 border-t border-stone-800 pt-6 text-xs">
               <div className="rounded-xl border border-stone-800/90 bg-stone-900/40 p-3.5">
                 <span className="text-[10px] font-bold text-[#D49B55] uppercase tracking-wider block">TIMINGS</span>
                 <span className="text-stone-300 mt-1 block">Open Daily: 11:00 AM – 11:00 PM</span>

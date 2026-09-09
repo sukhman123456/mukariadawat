@@ -955,10 +955,10 @@ export function ExperienceDawatSection() {
                   : null
               );
             }}
-            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 grid size-12 place-items-center rounded-full bg-black/80 border border-stone-800 text-stone-300 hover:text-white hover:border-[#D49B55] hover:scale-105 transition-all cursor-pointer shadow-2xl"
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 grid size-9 sm:size-12 place-items-center rounded-full bg-black/85 border border-stone-800 text-stone-300 hover:text-white hover:border-[#D49B55] hover:scale-105 transition-all cursor-pointer shadow-2xl"
             aria-label="Previous image"
           >
-            <ChevronLeft className="size-6" />
+            <ChevronLeft className="size-5 sm:size-6" />
           </button>
 
           {/* Navigation: Next Button */}
@@ -970,36 +970,36 @@ export function ExperienceDawatSection() {
                 prev !== null ? (prev + 1) % experiencePhotos.length : null
               );
             }}
-            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 grid size-12 place-items-center rounded-full bg-black/80 border border-stone-800 text-stone-300 hover:text-white hover:border-[#D49B55] hover:scale-105 transition-all cursor-pointer shadow-2xl"
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 grid size-9 sm:size-12 place-items-center rounded-full bg-black/85 border border-stone-800 text-stone-300 hover:text-white hover:border-[#D49B55] hover:scale-105 transition-all cursor-pointer shadow-2xl"
             aria-label="Next image"
           >
-            <ChevronRight className="size-6" />
+            <ChevronRight className="size-5 sm:size-6" />
           </button>
 
           {/* Main Lightbox Content Container */}
           <div
-            className="relative max-w-5xl w-full flex flex-col items-center justify-center animate-in zoom-in-95 duration-200"
+            className="relative max-w-5xl w-full flex flex-col items-center justify-center animate-in zoom-in-95 duration-200 px-2 sm:px-0"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image Box */}
-            <div className="relative max-h-[70vh] w-full flex items-center justify-center overflow-hidden rounded-2xl border border-stone-800 bg-stone-950 shadow-2xl">
+            <div className="relative max-h-[55vh] sm:max-h-[70vh] w-full flex items-center justify-center overflow-hidden rounded-2xl border border-stone-800 bg-stone-950 shadow-2xl">
               <img
                 src={activePhoto?.src ?? ""}
                 alt={activePhoto?.title ?? "Photograph"}
-                className="max-h-[70vh] w-auto max-w-full object-contain select-none"
+                className="max-h-[55vh] sm:max-h-[70vh] w-auto max-w-full object-contain select-none"
               />
             </div>
 
             {/* Caption & Details below Image */}
-            <div className="mt-4 w-full rounded-2xl border border-stone-800/80 bg-[#14110E]/90 p-4 sm:p-5 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 backdrop-blur-md">
+            <div className="mt-3 sm:mt-4 w-full rounded-2xl border border-stone-800/80 bg-[#14110E]/95 p-3.5 sm:p-5 text-left flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 backdrop-blur-md">
               <div>
                 <span className="text-[10px] font-semibold text-[#D49B55] uppercase tracking-wider">
                   {activePhoto?.category ?? ""} · {activePhoto?.subtitle ?? ""}
                 </span>
-                <h3 className="text-lg sm:text-xl font-display text-white mt-0.5">
+                <h3 className="text-base sm:text-xl font-display text-white mt-0.5">
                   {activePhoto?.title ?? ""}
                 </h3>
-                <p className="mt-1 text-xs text-stone-300 max-w-2xl">
+                <p className="mt-1 text-xs text-stone-300 line-clamp-2 max-w-2xl">
                   {activePhoto?.description ?? ""}
                 </p>
               </div>
@@ -1007,20 +1007,20 @@ export function ExperienceDawatSection() {
               {/* Action in Lightbox */}
               <a
                 href={site.phoneHref}
-                className="rounded-full bg-[#D49B55] px-5 py-2 text-xs font-semibold text-stone-950 hover:bg-[#C08845] transition-colors whitespace-nowrap shrink-0"
+                className="rounded-full bg-[#D49B55] px-5 py-2 text-xs font-semibold text-stone-950 hover:bg-[#C08845] transition-colors whitespace-nowrap shrink-0 self-stretch sm:self-auto text-center"
               >
                 Call: {site.phone}
               </a>
             </div>
 
             {/* Thumbnail Navigation Strip */}
-            <div className="mt-3 flex items-center gap-2 overflow-x-auto pb-1 max-w-full no-scrollbar">
+            <div className="mt-2.5 sm:mt-3 flex items-center gap-2 overflow-x-auto pb-1 max-w-full no-scrollbar">
               {experiencePhotos.map((photo, idx) => (
                 <button
                   key={photo.id}
                   type="button"
                   onClick={() => setLightboxIndex(idx)}
-                  className={`relative size-14 sm:size-16 rounded-lg overflow-hidden border transition-all shrink-0 cursor-pointer ${
+                  className={`relative size-12 sm:size-16 rounded-lg overflow-hidden border transition-all shrink-0 cursor-pointer ${
                     lightboxIndex === idx
                       ? "border-[#D49B55] scale-105 shadow-md shadow-[#D49B55]/30"
                       : "border-stone-800 opacity-60 hover:opacity-100 hover:border-stone-600"

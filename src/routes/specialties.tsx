@@ -154,16 +154,16 @@ function SpecialtiesPage() {
                       <strong className="text-stone-200">Key Spices & Ingredients:</strong>{" "}
                       {dish.spices}
                     </div>
-                    <div className="mt-8 flex items-center gap-4">
+                    <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                       <Link
                         to="/menu"
-                        className="inline-flex items-center gap-2 rounded-full bg-[#D49B55] px-6 py-2.5 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D49B55] px-6 py-3 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors text-center"
                       >
                         Order on Menu <ArrowRight className="size-4" />
                       </Link>
                       <a
                         href={site.phoneHref}
-                        className="inline-flex items-center gap-2 rounded-full border border-stone-700 px-6 py-2.5 text-xs sm:text-sm font-medium text-stone-300 hover:border-[#D49B55] hover:text-white transition-colors"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 px-6 py-3 text-xs sm:text-sm font-medium text-stone-300 hover:border-[#D49B55] hover:text-white transition-colors text-center"
                       >
                         <Phone className="size-3.5" /> Call: {site.phone}
                       </a>

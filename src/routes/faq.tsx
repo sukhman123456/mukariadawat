@@ -101,17 +101,17 @@ function FAQPage() {
         bgImage={realSkyLounge}
       />
 
-      <section className="mx-auto max-w-[1100px] px-5 py-16 sm:py-24 lg:px-8">
+      <section className="mx-auto max-w-[1100px] px-4 py-12 sm:py-20 lg:px-8">
         {/* Search & Categories */}
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-8 border-b border-[#D49B55]/20">
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-6 sm:pb-8 border-b border-[#D49B55]/20">
           {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 w-full md:w-auto">
             {["All", "Dining", "Food", "Delivery", "Events"].map((cat) => (
               <button
                 key={cat}
                 type="button"
                 onClick={() => setActiveCat(cat)}
-                className={`rounded-full px-5 py-1.5 text-xs font-medium transition-all ${
+                className={`shrink-0 rounded-full px-4 sm:px-5 py-1.5 text-xs font-medium transition-all ${
                   activeCat === cat
                     ? "bg-gradient-to-r from-[#D49B55] to-[#E5B869] text-stone-950 font-semibold shadow-md shadow-[#D49B55]/20"
                     : "border border-stone-800 bg-[#14110E] text-stone-300 hover:border-[#D49B55]/40 hover:text-white"

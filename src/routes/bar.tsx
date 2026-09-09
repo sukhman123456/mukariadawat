@@ -34,8 +34,8 @@ function BarPage() {
       />
 
       {/* Real Bar Atmosphere Showcase */}
-      <section className="py-12 sm:py-16 border-b border-stone-800/60 bg-[#120F0D]">
-        <div className="mx-auto max-w-[1360px] px-5 lg:px-12">
+      <section className="py-10 sm:py-16 border-b border-stone-800/60 bg-[#120F0D]">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-12">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.2fr]">
             <Reveal className="relative overflow-hidden rounded-2xl border border-stone-800 shadow-2xl">
               <img
@@ -62,10 +62,10 @@ function BarPage() {
               <p className="mt-4 text-xs sm:text-sm text-stone-300/80 leading-relaxed">
                 Enjoy a relaxed, high-energy dining and drinks atmosphere on G.T. Road. Our bar counter features chilled draughts on tap, premium domestic and imported spirits, ice-cold bottled lagers, and signature non-alcoholic mocktails.
               </p>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#bar-menu"
-                  className="luxury-shimmer inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] to-[#C08845] px-6 py-2.5 text-xs font-semibold text-stone-950 shadow-md"
+                  className="luxury-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] to-[#C08845] px-6 py-3 text-xs font-semibold text-stone-950 shadow-md text-center"
                 >
                   View Bar Menu Below <ArrowRight className="size-3.5" />
                 </a>
@@ -73,7 +73,7 @@ function BarPage() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-5 py-2.5 text-xs font-medium text-emerald-300 hover:bg-emerald-500/20 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-5 py-3 text-xs font-medium text-emerald-300 hover:bg-emerald-500/20 transition-all text-center"
                 >
                   <WhatsAppIcon size={14} />
                   <span>WhatsApp Inquiries</span>

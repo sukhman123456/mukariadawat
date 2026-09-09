@@ -42,23 +42,23 @@ function Contact() {
         bgImage={mapCard}
       />
 
-      <section className="mx-auto max-w-[1360px] px-5 py-20 lg:px-10 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 items-start">
+      <section className="mx-auto max-w-[1360px] px-4 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 items-start">
           {/* Left: Contact Card */}
           <Reveal>
-            <div className="rounded-3xl border border-[#D49B55]/30 bg-gradient-to-b from-[#1C1713] via-[#14110E] to-black p-8 sm:p-10 shadow-2xl backdrop-blur-xl">
-              <span className="text-[11px] font-semibold tracking-[0.25em] text-[#D49B55] uppercase block">
+            <div className="rounded-3xl border border-[#D49B55]/30 bg-gradient-to-b from-[#1C1713] via-[#14110E] to-black p-5 xs:p-7 sm:p-10 shadow-2xl backdrop-blur-xl">
+              <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#D49B55] uppercase block">
                 ✦ OFFICIAL ADDRESS & REACH
               </span>
-              <h2 className="font-display text-3xl text-white mt-2">{site.name}</h2>
+              <h2 className="font-display text-2xl sm:text-3xl text-white mt-2">{site.name}</h2>
               <p className="font-gurmukhi text-sm text-[#D49B55]/90 mt-1">
                 {site.namePunjabi}
               </p>
               <div className="mt-4 h-[1.5px] w-14 bg-gradient-to-r from-[#D49B55] to-transparent" />
 
-              <address className="mt-8 space-y-5 text-sm leading-relaxed text-stone-200 not-italic">
+              <address className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 text-xs sm:text-sm leading-relaxed text-stone-200 not-italic">
                 <p className="flex items-start gap-3">
-                  <MapPin className="mt-1 size-4 shrink-0 text-[#D49B55]" aria-hidden="true" />
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#D49B55]" aria-hidden="true" />
                   <span>{site.address}</span>
                 </p>
                 <p className="flex items-center gap-3">
@@ -77,7 +77,7 @@ function Contact() {
                     href={site.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-emerald-400 transition-colors font-medium text-stone-200"
+                    className="hover:text-emerald-400 transition-colors font-medium text-stone-200 truncate"
                   >
                     WhatsApp: {site.whatsapp} ↗
                   </a>
@@ -88,7 +88,7 @@ function Contact() {
                     href={site.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#38BDF8] transition-colors font-medium text-stone-200"
+                    className="hover:text-[#38BDF8] transition-colors font-medium text-stone-200 truncate"
                   >
                     Facebook: {site.facebookHandle} ↗
                   </a>
@@ -99,7 +99,7 @@ function Contact() {
                 </p>
               </address>
 
-              <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-stone-800 pt-6 text-xs">
+              <dl className="mt-6 sm:mt-8 grid grid-cols-1 xs:grid-cols-2 gap-3 border-t border-stone-800 pt-5 sm:pt-6 text-xs">
                 <div className="rounded-xl border border-stone-800/90 bg-stone-900/40 p-3">
                   <dt className="text-[10px] tracking-[0.2em] text-[#D49B55] uppercase font-bold">Services</dt>
                   <dd className="mt-1 text-stone-300">Dine-in · Bar · Takeaway · Delivery</dd>
@@ -110,37 +110,37 @@ function Contact() {
                 </div>
               </dl>
 
-              {/* Action Buttons */}
-              <div className="mt-8 flex flex-wrap gap-3">
+              {/* Action Buttons - 2 Column Mobile Grid */}
+              <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap">
                 <a
                   href={site.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] via-[#E5B869] to-[#C08845] px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-950 shadow-lg shadow-[#D49B55]/20 hover:scale-105 active:scale-95 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] via-[#E5B869] to-[#C08845] px-4 sm:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-950 shadow-lg shadow-[#D49B55]/20 hover:scale-105 active:scale-95 transition-all text-center"
                 >
-                  <Phone className="size-4" aria-hidden="true" /> Call Counter
+                  <Phone className="size-3.5 sm:size-4" aria-hidden="true" /> <span>Call</span>
                 </a>
                 <a
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-800/60 bg-emerald-950/40 px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-emerald-300 hover:bg-emerald-950/70 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-emerald-800/60 bg-emerald-950/40 px-4 sm:px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-emerald-300 hover:bg-emerald-950/70 transition-all text-center"
                 >
-                  <WhatsAppIcon className="size-4 text-emerald-400" /> WhatsApp
+                  <WhatsAppIcon className="size-3.5 sm:size-4 text-emerald-400" /> <span>WhatsApp</span>
                 </a>
                 <a
                   href={site.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-sky-800/60 bg-sky-950/40 px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-sky-300 hover:bg-sky-950/70 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-sky-800/60 bg-sky-950/40 px-4 sm:px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-sky-300 hover:bg-sky-950/70 transition-all text-center"
                 >
-                  <FacebookIcon className="size-4 text-sky-400" /> Facebook
+                  <FacebookIcon className="size-3.5 sm:size-4 text-sky-400" /> <span>Facebook</span>
                 </a>
                 <a
                   href={site.directionsLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide text-stone-200 hover:border-[#D49B55] hover:text-white transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide text-stone-200 hover:border-[#D49B55] hover:text-white transition-all text-center"
                 >
-                  <Navigation className="size-4 text-[#D49B55]" aria-hidden="true" /> Directions
+                  <Navigation className="size-3.5 sm:size-4 text-[#D49B55]" aria-hidden="true" /> <span>Directions</span>
                 </a>
               </div>
             </div>
@@ -149,16 +149,16 @@ function Contact() {
           {/* Right: Embedded Map in Luxury Dark Frame */}
           <Reveal delay={120} className="w-full">
             <div className="rounded-3xl border border-stone-800/90 p-2 sm:p-3.5 bg-gradient-to-b from-[#1C1713] to-black shadow-2xl">
-              <div className="overflow-hidden rounded-2xl border border-stone-800/80 bg-stone-950 min-h-[420px]">
+              <div className="overflow-hidden rounded-2xl border border-stone-800/80 bg-stone-950 min-h-[280px] sm:min-h-[420px]">
                 <iframe
                   title="Map showing Dawat Restaurant on G.T. Road, Mukerian"
                   src={site.mapEmbed}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="size-full min-h-[420px] w-full"
+                  className="size-full min-h-[280px] sm:min-h-[420px] w-full border-0"
                 />
               </div>
-              <div className="mt-3 flex items-center justify-between px-2 text-xs text-stone-400">
+              <div className="mt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 px-2 text-xs text-stone-400">
                 <span>✦ Opposite P.W.D. Rest House, Mukerian</span>
                 <span className="text-[#D49B55]">Free Highway Parking Available</span>
               </div>

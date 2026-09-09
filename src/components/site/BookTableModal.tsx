@@ -58,7 +58,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-[#D49B55]/40 bg-gradient-to-b from-[#1E1914] via-[#14110E] to-black p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95)] text-stone-200 animate-in zoom-in-95 duration-300"
+        className="relative w-full max-w-lg max-h-[90dvh] overflow-y-auto rounded-3xl border border-[#D49B55]/40 bg-gradient-to-b from-[#1E1914] via-[#14110E] to-black p-4 xs:p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95)] text-stone-200 animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Ambient Top Glow */}
@@ -68,13 +68,13 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
         />
 
         {/* Header */}
-        <div className="flex items-start justify-between border-b border-stone-800 pb-4">
+        <div className="flex items-start justify-between border-b border-stone-800 pb-3 sm:pb-4">
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D49B55]/40 bg-black/60 px-3 py-0.5 text-[10px] font-semibold tracking-wider text-[#D49B55] uppercase">
               <Sparkles className="size-2.5" />
               {lang === "pa" ? "ਤੁਰੰਤ ਟੇਬਲ ਬੁਕਿੰਗ" : "Instant Table Reservation"}
             </span>
-            <h2 className="mt-2 font-display text-2xl sm:text-3xl text-[#FAF5EE]">
+            <h2 className="mt-2 font-display text-xl sm:text-3xl text-[#FAF5EE]">
               {t("bookModalTitle")}
             </h2>
             <p className="mt-1 text-xs text-stone-400">

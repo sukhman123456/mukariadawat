@@ -45,16 +45,16 @@ export function PageHero({
         className="pointer-events-none absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[300px] rounded-full bg-[#D49B55]/10 blur-[130px]"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-16 lg:px-10 lg:py-24">
+      <div className="relative z-10 mx-auto max-w-[1360px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-24">
         {label && (
           <div className="inline-flex items-center gap-2 rounded-full border border-[#D49B55]/40 bg-black/60 px-3.5 py-1 backdrop-blur-md mb-4 shadow-md">
             <span className="size-1.5 rounded-full bg-[#D49B55] animate-ping" />
-            <span className="text-[11px] font-semibold tracking-[0.25em] text-[#D49B55] uppercase">
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#D49B55] uppercase">
               {label}
             </span>
           </div>
         )}
-        <h1 className="mt-2 max-w-3xl font-display text-4xl leading-[1.08] text-[#FAF5EE] sm:text-5xl lg:text-6xl tracking-tight">
+        <h1 className="mt-2 max-w-3xl font-display text-3xl xs:text-4xl leading-[1.12] sm:leading-[1.08] text-[#FAF5EE] sm:text-5xl lg:text-6xl tracking-tight">
           {title}
         </h1>
         {subtitle && (
