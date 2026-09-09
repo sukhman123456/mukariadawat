@@ -1,0 +1,231 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Dawat Restaurant design system.
+ * Warm ivory paper, deep maroon, muted saffron, charcoal text.
+ * All colours in oklch. Serif display (Marcellus) + sans (Jost).
+ */
+
+@theme inline {
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 10px;
+  --radius-4xl: 12px;
+  --font-display: "Marcellus", "Cormorant Garamond", serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-gurmukhi: "Noto Sans Gurmukhi", "Jost", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--gold);
+  --color-ivory: var(--ivory);
+  --color-chart-1: var(--primary);
+  --color-chart-2: var(--gold);
+  --color-chart-3: var(--charcoal);
+  --color-chart-4: var(--muted-foreground);
+  --color-chart-5: var(--border);
+  --color-sidebar: var(--card);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 4px;
+  --background: oklch(0.12 0.008 55);
+  --foreground: oklch(0.96 0.012 88);
+  --card: oklch(0.16 0.012 45);
+  --card-foreground: oklch(0.96 0.012 88);
+  --popover: oklch(0.16 0.012 45);
+  --popover-foreground: oklch(0.96 0.012 88);
+  --primary: oklch(0.74 0.115 74);
+  --primary-foreground: oklch(0.12 0.008 55);
+  --secondary: oklch(0.18 0.012 50);
+  --secondary-foreground: oklch(0.96 0.012 88);
+  --muted: oklch(0.18 0.012 50);
+  --muted-foreground: oklch(0.74 0.018 70);
+  --accent: oklch(0.76 0.12 74);
+  --accent-foreground: oklch(0.12 0.008 55);
+  --destructive: oklch(0.6 0.19 25);
+  --destructive-foreground: oklch(0.98 0.012 88);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.76 0.12 74);
+  --charcoal: oklch(0.10 0.008 60);
+  --gold: oklch(0.76 0.12 74);
+  --ivory: oklch(0.96 0.012 88);
+}
+
+.dark {
+  --background: oklch(0.12 0.008 55);
+  --foreground: oklch(0.96 0.012 88);
+  --card: oklch(0.16 0.012 45);
+  --card-foreground: oklch(0.96 0.012 88);
+  --popover: oklch(0.16 0.012 45);
+  --popover-foreground: oklch(0.96 0.012 88);
+  --primary: oklch(0.74 0.115 74);
+  --primary-foreground: oklch(0.12 0.008 55);
+  --secondary: oklch(0.18 0.012 50);
+  --secondary-foreground: oklch(0.96 0.012 88);
+  --muted: oklch(0.18 0.012 50);
+  --muted-foreground: oklch(0.74 0.018 70);
+  --accent: oklch(0.76 0.12 74);
+  --accent-foreground: oklch(0.12 0.008 55);
+  --destructive: oklch(0.6 0.19 25);
+  --destructive-foreground: oklch(0.98 0.012 88);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.76 0.12 74);
+  --charcoal: oklch(0.10 0.008 60);
+  --gold: oklch(0.76 0.12 74);
+  --ivory: oklch(0.96 0.012 88);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+}
+
+@utility font-gurmukhi {
+  font-family: var(--font-gurmukhi);
+}
+
+@utility eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility rule-gold {
+  height: 1px;
+  width: 3.5rem;
+  background: var(--color-gold);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+
+  &[data-shown="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes heroGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.99);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmerGleam {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+@keyframes emberFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-650px) translateX(var(--ember-drift, 20px)) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@utility animate-hero-float {
+  animation: heroFloat 7s ease-in-out infinite;
+}
+
+@utility animate-hero-glow {
+  animation: heroGlow 5s ease-in-out infinite;
+}
+
+@utility animate-shimmer-gleam {
+  animation: shimmerGleam 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
