@@ -575,7 +575,7 @@ function PremiumMenuPage() {
   };
 
   return (
-    <div className="bg-[#0E0C0A] text-[#FAF5EE] selection:bg-[#D49B55] selection:text-stone-950">
+    <div className="bg-[#F5EFE6] text-[#1C1917] selection:bg-[#A87545] selection:text-[#F5EFE6]">
       {/* Hero */}
       <PageHero
         title="Dawat Restaurant Menu"
@@ -590,7 +590,7 @@ function PremiumMenuPage() {
         {/* 4 MAIN CATEGORY TABS (01 VEG, 02 NON-VEG, 03 DRINKS, 04 BAR) */}
         {/* ======================================================== */}
         <div className="w-full flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-2">
-          <div className="inline-flex items-center gap-1.5 sm:gap-3 rounded-2xl border border-stone-800 bg-[#14110E] p-1.5 sm:p-2 shadow-2xl min-w-max mx-auto">
+          <div className="inline-flex items-center gap-1.5 sm:gap-3 rounded-2xl border border-[#A87545]/25 bg-white p-1.5 sm:p-2 shadow-lg min-w-max mx-auto">
             {(
               [
                 "01 — VEGETARIAN",
@@ -612,20 +612,20 @@ function PremiumMenuPage() {
                   onClick={() => handleTabChange(tab)}
                   className={`group relative flex items-center gap-2 rounded-xl px-4 py-2.5 sm:px-8 sm:py-3.5 text-[11px] sm:text-sm font-sans font-medium tracking-wider uppercase transition-all duration-300 cursor-pointer min-h-[44px] ${
                     isActive
-                      ? "bg-[#D49B55] text-stone-950 font-semibold shadow-lg shadow-[#D49B55]/20 scale-[1.02]"
-                      : "text-stone-300 hover:text-white hover:bg-stone-900/80 border border-transparent"
+                      ? "bg-[#A87545] text-[#F5EFE6] font-semibold shadow-md shadow-[#A87545]/20 scale-[1.02]"
+                      : "text-[#5A4D41] hover:text-[#1C1917] hover:bg-[#A87545]/10 hover:border-[#A87545]/25 border border-transparent"
                   }`}
                 >
                   {/* Category icon / indicator */}
                   {isVeg && (
                     <span
                       className={`grid size-4 place-items-center rounded-sm border p-0.5 ${
-                        isActive ? "border-stone-950" : "border-emerald-500"
+                        isActive ? "border-[#F5EFE6]" : "border-emerald-600"
                       }`}
                     >
                       <span
                         className={`size-2 rounded-full ${
-                          isActive ? "bg-stone-950" : "bg-emerald-500"
+                          isActive ? "bg-[#F5EFE6]" : "bg-emerald-600"
                         }`}
                       />
                     </span>
@@ -633,12 +633,12 @@ function PremiumMenuPage() {
                   {isNonVeg && (
                     <span
                       className={`grid size-4 place-items-center rounded-sm border p-0.5 ${
-                        isActive ? "border-stone-950" : "border-rose-500"
+                        isActive ? "border-[#F5EFE6]" : "border-rose-600"
                       }`}
                     >
                       <span
                         className={`size-2 rounded-full ${
-                          isActive ? "bg-stone-950" : "bg-rose-500"
+                          isActive ? "bg-[#F5EFE6]" : "bg-rose-600"
                         }`}
                       />
                     </span>
@@ -646,14 +646,14 @@ function PremiumMenuPage() {
                   {isDrinks && (
                     <CupSoda
                       className={`size-4 ${
-                        isActive ? "text-stone-950" : "text-amber-400"
+                        isActive ? "text-[#F5EFE6]" : "text-[#A87545]"
                       }`}
                     />
                   )}
                   {isBar && (
                     <Wine
                       className={`size-4 ${
-                        isActive ? "text-stone-950" : "text-[#38BDF8]"
+                        isActive ? "text-[#F5EFE6]" : "text-[#C8A875]"
                       }`}
                     />
                   )}
@@ -673,7 +673,7 @@ function PremiumMenuPage() {
         ) : (
           <>
             {/* Sub-bar: Search and Subcategories */}
-            <div className="mt-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 pb-6 border-b border-stone-800">
+            <div className="mt-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 pb-6 border-b border-[#A87545]/15">
               {/* Subcategory Pills */}
               <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
                 {availableSubCategories.map((sub) => (
@@ -683,8 +683,8 @@ function PremiumMenuPage() {
                     onClick={() => setSubFilter(sub)}
                     className={`rounded-full px-4 py-1.5 text-xs whitespace-nowrap transition-all cursor-pointer ${
                       subFilter === sub
-                        ? "bg-[#8C5E35] text-white font-medium shadow-sm"
-                        : "border border-stone-800 bg-stone-900/60 text-stone-400 hover:text-stone-200 hover:border-stone-700"
+                        ? "bg-[#A87545] text-[#F5EFE6] font-semibold shadow-sm"
+                        : "border border-[#A87545]/20 bg-white text-[#5A4D41] hover:text-[#1C1917] hover:border-[#A87545]/50 shadow-sm"
                     }`}
                   >
                     {sub}
@@ -699,14 +699,14 @@ function PremiumMenuPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder={`Search in ${(activeTab.split("—")[1] ?? activeTab).trim()}...`}
-                  className="w-full rounded-full border border-stone-800 bg-stone-900/90 pl-9 pr-4 py-2 text-xs text-stone-200 placeholder:text-stone-500 focus:border-[#D49B55] focus:outline-none"
+                  className="w-full rounded-full border border-[#A87545]/25 bg-white pl-9 pr-4 py-2 text-xs text-[#1C1917] placeholder:text-[#5A4D41]/60 focus:border-[#A87545] focus:outline-none focus:ring-1 focus:ring-[#A87545]/30 transition-all shadow-sm"
                 />
-                <Search className="absolute left-3.5 top-2.5 size-3.5 text-stone-500" />
+                <Search className="absolute left-3.5 top-2.5 size-3.5 text-[#A87545]/70" />
                 {searchQuery && (
                   <button
                     type="button"
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3.5 top-2 text-[10px] text-stone-400 hover:text-white"
+                    className="absolute right-3.5 top-2 text-[10px] text-[#5A4D41] hover:text-[#A87545]"
                   >
                     Clear
                   </button>
@@ -717,18 +717,18 @@ function PremiumMenuPage() {
             {/* Category Header Banner */}
             <div className="mt-8 flex items-center justify-between">
               <div>
-                <p className="font-sans text-xs font-semibold tracking-[0.25em] text-[#D49B55] uppercase">
+                <p className="font-sans text-xs font-semibold tracking-[0.25em] text-[#A87545] uppercase">
                   {activeTab === "01 — VEGETARIAN"
                     ? "100% PURE VEGETARIAN DELICACIES"
                     : activeTab === "02 — NON-VEGETARIAN"
                     ? "CHARCOAL TANDOORI & RICH GRAVIES"
                     : "REFRESHING BEVERAGES, TEAS & CONFECTIONS"}
                 </p>
-                <h2 className="mt-1 font-display text-2xl sm:text-3xl text-[#FAF5EE]">
+                <h2 className="mt-1 font-display text-2xl sm:text-3xl text-[#1C1917]">
                   {(activeTab.split("—")[1] ?? activeTab).trim()} Selection
                 </h2>
               </div>
-              <span className="text-xs text-stone-400 font-mono">
+              <span className="text-xs text-[#5A4D41] font-mono">
                 {displayItems.length} Offerings
               </span>
             </div>
@@ -745,10 +745,10 @@ function PremiumMenuPage() {
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === "Enter" && setSelectedFood(item)}
-                  className="luxury-shimmer group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-stone-800/80 bg-[#14110E] transition-all duration-300 hover:border-[#D49B55]/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/80 cursor-pointer text-left focus:outline-none focus:ring-1 focus:ring-[#D49B55]"
+                  className="luxury-shimmer group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#A87545]/20 bg-white transition-all duration-300 hover:border-[#A87545]/60 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#1C1917]/10 cursor-pointer text-left focus:outline-none focus:ring-1 focus:ring-[#A87545]"
                 >
-                  {/* Image Container with Zoom and Warm Dark Overlay */}
-                  <div className="relative aspect-[16/11] overflow-hidden bg-stone-900">
+                  {/* Image Container with Zoom */}
+                  <div className="relative aspect-[16/11] overflow-hidden bg-black">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -758,8 +758,8 @@ function PremiumMenuPage() {
                       className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
-                    {/* Dark gradient overlay that deepens on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#14110E] via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 group-hover:opacity-80" />
 
                     {/* Top Badges */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
@@ -773,7 +773,7 @@ function PremiumMenuPage() {
                           title={item.isVeg ? "Pure Vegetarian" : "Non-Vegetarian"}
                         >
                           <span
-                            className={`size-2.5 rounded-full ${
+                            className={`size-2 rounded-full ${
                               item.isVeg ? "bg-emerald-500" : "bg-rose-500"
                             }`}
                           />
@@ -781,7 +781,7 @@ function PremiumMenuPage() {
                       )}
 
                       {item.isSpecial && (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-[#D49B55] px-2.5 py-0.5 text-[9px] font-bold text-stone-950 uppercase tracking-wider shadow-md">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-[#C8A875] px-2.5 py-0.5 text-[9px] font-bold text-[#1C1917] uppercase tracking-wider shadow-md">
                           <Sparkles className="size-2.5" /> Dawat Special
                         </span>
                       )}
@@ -791,33 +791,33 @@ function PremiumMenuPage() {
                   {/* Card Content */}
                   <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
                     <div>
-                      <span className="text-[10px] font-semibold text-[#D49B55] uppercase tracking-wider">
+                      <span className="text-[10px] font-semibold text-[#A87545] uppercase tracking-wider">
                         {item.subCategory}
                       </span>
 
-                      <h3 className="mt-1 font-display text-lg sm:text-xl font-medium text-[#FAF5EE] group-hover:text-[#D49B55] transition-colors leading-snug line-clamp-1">
+                      <h3 className="mt-1 font-display text-lg sm:text-xl font-medium text-[#1C1917] group-hover:text-[#A87545] transition-colors leading-snug line-clamp-1">
                         {item.name}
                       </h3>
 
-                      <p className="mt-2 font-sans text-xs text-stone-400 leading-relaxed line-clamp-2">
+                      <p className="mt-2 font-sans text-xs text-[#5A4D41] leading-relaxed line-clamp-2">
                         {item.description}
                       </p>
                     </div>
 
                     {/* Price & Details Arrow */}
-                    <div className="mt-4 sm:mt-5 pt-3.5 border-t border-stone-800/80 flex items-center justify-between">
+                    <div className="mt-4 sm:mt-5 pt-3.5 border-t border-[#A87545]/15 flex items-center justify-between">
                       <div>
-                        <span className="font-display text-lg font-semibold text-[#FAF5EE]">
+                        <span className="font-display text-lg font-semibold text-[#A87545]">
                           {item.price}
                         </span>
                         {item.priceHalf && (
-                          <span className="block text-[9px] text-stone-400">
+                          <span className="block text-[9px] text-[#5A4D41]">
                             Half / Full portion
                           </span>
                         )}
                       </div>
 
-                      <div className="inline-flex items-center gap-1 text-xs font-medium text-stone-400 group-hover:text-[#D49B55] transition-colors">
+                      <div className="inline-flex items-center gap-1 text-xs font-medium text-[#5A4D41] group-hover:text-[#A87545] transition-colors">
                         <span className="text-[11px]">Details</span>
                         <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
                       </div>
@@ -827,26 +827,26 @@ function PremiumMenuPage() {
               ))}
             </div>
 
-            {/* Official Notes from Menu */}
-            <div className="mt-16 rounded-2xl border border-stone-800 bg-[#120F0D] p-5 sm:p-8">
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#D49B55] uppercase tracking-wider">
+            {/* Official Notes from Menu (Rule 4: Alternating Dark Coffee Section) */}
+            <div className="mt-16 rounded-2xl border border-[#A87545]/25 bg-[#241B16] p-5 sm:p-8 shadow-xl text-[#F5EFE6]">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#C8A875] uppercase tracking-wider">
                 <Info className="size-4" /> Official Dawat Kitchen Policies
               </div>
-              <div className="mt-4 grid gap-4 sm:grid-cols-3 text-xs text-stone-300/80 leading-relaxed">
-                <div className="rounded-xl border border-stone-800 bg-stone-900/50 p-4">
-                  <strong className="block text-stone-200 font-medium mb-1">
+              <div className="mt-4 grid gap-4 sm:grid-cols-3 text-xs text-[#D8C8B8] leading-relaxed">
+                <div className="rounded-xl border border-[#A87545]/20 bg-[#1C1917] p-4 shadow-sm">
+                  <strong className="block text-[#F5EFE6] font-medium mb-1">
                     Outside Food Notice
                   </strong>
                   Outside Drinks & Food Not Allowed inside the dining areas.
                 </div>
-                <div className="rounded-xl border border-stone-800 bg-stone-900/50 p-4">
-                  <strong className="block text-stone-200 font-medium mb-1">
+                <div className="rounded-xl border border-[#A87545]/20 bg-[#1C1917] p-4 shadow-sm">
+                  <strong className="block text-[#F5EFE6] font-medium mb-1">
                     Boneless Chicken Preparation
                   </strong>
                   Additional charges for boneless chicken: ₹25 (Half) / ₹50 (Full).
                 </div>
-                <div className="rounded-xl border border-stone-800 bg-stone-900/50 p-4">
-                  <strong className="block text-stone-200 font-medium mb-1">
+                <div className="rounded-xl border border-[#A87545]/20 bg-[#1C1917] p-4 shadow-sm">
+                  <strong className="block text-[#F5EFE6] font-medium mb-1">
                     Dedicated Kitchen Stations
                   </strong>
                   Pure vegetarian gravies and tandoori breads are prepared in separate hygienic sections.
@@ -856,18 +856,18 @@ function PremiumMenuPage() {
           </>
         )}
 
-        {/* Bottom Call & Order CTA */}
-        <div className="mt-12 rounded-2xl border border-stone-800 bg-gradient-to-r from-[#1A1613] via-[#14110E] to-[#120F0D] p-6 sm:p-12 text-center">
-          <h3 className="font-display text-2xl sm:text-3xl text-[#FAF5EE]">
+        {/* Bottom Call & Order CTA (Dark Espresso) */}
+        <div className="mt-12 rounded-2xl border border-[#A87545]/30 bg-gradient-to-r from-[#1C1917] via-[#241B16] to-[#1C1917] p-6 sm:p-12 text-center shadow-2xl text-[#F5EFE6]">
+          <h3 className="font-display text-2xl sm:text-3xl text-[#F5EFE6]">
             Ready to Order from Dawat?
           </h3>
-          <p className="mt-2 text-xs sm:text-sm text-stone-400 max-w-lg mx-auto">
+          <p className="mt-2 text-xs sm:text-sm text-[#D8C8B8] max-w-lg mx-auto">
             Give us a call for fast takeaway pickups or visit our dining hall & SKY lounge for an authentic Punjabi dining feast.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a
               href={site.phoneHref}
-              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#D49B55] px-7 py-3 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
+              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#A87545] px-7 py-3 text-xs sm:text-sm font-semibold text-[#F5EFE6] hover:bg-[#B98350] transition-colors shadow-lg shadow-[#A87545]/20"
             >
               <Phone className="size-4" /> Call {site.phone}
             </a>
@@ -891,31 +891,31 @@ function PremiumMenuPage() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-3 sm:p-4 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 sm:p-4 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
           onClick={() => setSelectedFood(null)}
         >
           <div
-            className="relative max-w-2xl w-full max-h-[88dvh] overflow-y-auto rounded-2xl bg-[#14110E] border border-stone-800 shadow-2xl animate-in zoom-in-95 duration-200 my-auto"
+            className="relative max-w-2xl w-full max-h-[88dvh] overflow-y-auto rounded-2xl bg-[#1C1917] border border-[#A87545]/30 shadow-2xl animate-in zoom-in-95 duration-200 my-auto text-[#F5EFE6]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setSelectedFood(null)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 grid size-10 place-items-center rounded-full bg-black/80 text-white hover:text-[#D49B55] transition-colors cursor-pointer touch-target shadow-xl"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 grid size-10 place-items-center rounded-full bg-black/80 text-white hover:text-[#C8A875] transition-colors cursor-pointer touch-target shadow-xl"
               aria-label="Close food details"
             >
               <X className="size-5" />
             </button>
 
             {/* Large Food Image */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-stone-900">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
               <img
                 src={selectedFood.image}
                 alt={selectedFood.name}
                 className="size-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#14110E] via-transparent to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917] via-transparent to-black/30" />
 
               {/* Modal Top Badges */}
               <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-2">
@@ -936,7 +936,7 @@ function PremiumMenuPage() {
                   </span>
                 )}
                 {selectedFood.isSpecial && (
-                  <span className="rounded-full bg-[#D49B55] px-3 py-1 text-[11px] font-bold text-stone-950 uppercase tracking-wider">
+                  <span className="rounded-full bg-[#C8A875] px-3 py-1 text-[11px] font-bold text-[#1C1917] uppercase tracking-wider">
                     Dawat Signature
                   </span>
                 )}
@@ -947,37 +947,37 @@ function PremiumMenuPage() {
             <div className="p-5 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
                 <div>
-                  <span className="text-xs font-semibold text-[#D49B55] uppercase tracking-wider">
+                  <span className="text-xs font-semibold text-[#C8A875] uppercase tracking-wider">
                     {selectedFood.subCategory}
                   </span>
-                  <h2 className="font-display text-2xl sm:text-3xl text-[#FAF5EE] mt-1">
+                  <h2 className="font-display text-2xl sm:text-3xl text-[#F5EFE6] mt-1">
                     {selectedFood.name}
                   </h2>
                 </div>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#D49B55]">
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#C8A875]">
                   {selectedFood.price}
                 </span>
               </div>
 
-              <p className="mt-4 font-sans text-sm sm:text-base text-stone-300/90 leading-relaxed">
+              <p className="mt-4 font-sans text-sm sm:text-base text-[#D8C8B8] leading-relaxed">
                 {selectedFood.description}
               </p>
 
               {/* Portion breakdown if applicable */}
               {selectedFood.priceHalf && selectedFood.priceFull && (
-                <div className="mt-4 rounded-xl border border-stone-800 bg-[#0E0C0A] p-3 text-xs text-stone-400 flex items-center justify-between">
+                <div className="mt-4 rounded-xl border border-[#A87545]/20 bg-[#241B16] p-3 text-xs text-[#D8C8B8] flex items-center justify-between">
                   <span>Portion Pricing:</span>
-                  <span className="text-stone-200">
-                    Half: <strong className="text-[#D49B55]">₹{selectedFood.priceHalf}</strong> · Full: <strong className="text-[#D49B55]">₹{selectedFood.priceFull}</strong>
+                  <span className="text-[#F5EFE6]">
+                    Half: <strong className="text-[#C8A875]">₹{selectedFood.priceHalf}</strong> · Full: <strong className="text-[#C8A875]">₹{selectedFood.priceFull}</strong>
                   </span>
                 </div>
               )}
 
               {/* Action Buttons */}
-              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#A87545]/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                 <a
                   href={site.phoneHref}
-                  className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#D49B55] px-6 py-2.5 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#A87545] px-6 py-2.5 text-xs sm:text-sm font-semibold text-[#F5EFE6] hover:bg-[#B98350] transition-colors shadow-lg shadow-[#A87545]/20"
                 >
                   <Phone className="size-4" /> Order by Phone ({site.phone})
                 </a>

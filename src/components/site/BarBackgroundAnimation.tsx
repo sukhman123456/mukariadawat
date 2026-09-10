@@ -52,11 +52,11 @@ export function BarBackgroundAnimation({ className }: BarBackgroundAnimationProp
   // Ambient nightlife lounge bokeh orbs reflecting bar shelves & glassware
   const bokehOrbs: BokehOrb[] = useMemo(() => {
     return [
-      { id: 1, top: 18, left: 12, size: 140, color: "rgba(212, 155, 85, 0.12)", duration: 7.5, delay: 0 },
-      { id: 2, top: 55, left: 35, size: 180, color: "rgba(245, 158, 11, 0.10)", duration: 9.0, delay: 2.2 },
-      { id: 3, top: 25, left: 75, size: 160, color: "rgba(56, 189, 248, 0.08)", duration: 8.2, delay: 1.4 }, // SKY blue neon
-      { id: 4, top: 65, left: 85, size: 130, color: "rgba(212, 155, 85, 0.14)", duration: 7.0, delay: 3.5 },
-      { id: 5, top: 12, left: 52, size: 110, color: "rgba(255, 237, 160, 0.10)", duration: 6.5, delay: 1.8 },
+      { id: 1, top: 18, left: 12, size: 140, color: "rgba(201, 162, 39, 0.12)", duration: 7.5, delay: 0 },
+      { id: 2, top: 55, left: 35, size: 180, color: "rgba(223, 191, 85, 0.10)", duration: 9.0, delay: 2.2 },
+      { id: 3, top: 25, left: 75, size: 160, color: "rgba(200, 168, 117, 0.12)", duration: 8.2, delay: 1.4 }, // Warm champagne
+      { id: 4, top: 65, left: 85, size: 130, color: "rgba(201, 162, 39, 0.14)", duration: 7.0, delay: 3.5 },
+      { id: 5, top: 12, left: 52, size: 110, color: "rgba(245, 240, 230, 0.10)", duration: 6.5, delay: 1.8 },
     ];
   }, []);
 
@@ -73,18 +73,18 @@ export function BarBackgroundAnimation({ className }: BarBackgroundAnimationProp
       {/* ----------------------------------------------------------------- */}
       {/* Pendant Lamp 1 Warm Flare (Top Left) */}
       <div
-        className="absolute -top-20 left-[10%] w-[320px] h-[400px] bg-gradient-to-b from-[#F5D28E]/25 via-[#D49B55]/12 to-transparent blur-[80px] rounded-full animate-aurora-pulse"
+        className="absolute -top-20 left-[10%] w-[320px] h-[400px] bg-gradient-to-b from-[#DFBF55]/25 via-[#C9A227]/12 to-transparent blur-[80px] rounded-full animate-aurora-pulse"
         style={{ animationDuration: "6.5s" }}
       />
       {/* Pendant Lamp 2 Warm Flare (Top Center-Left) */}
       <div
-        className="absolute -top-24 left-[35%] w-[360px] h-[420px] bg-gradient-to-b from-[#F59E0B]/22 via-[#D49B55]/10 to-transparent blur-[90px] rounded-full animate-aurora-pulse"
+        className="absolute -top-24 left-[35%] w-[360px] h-[420px] bg-gradient-to-b from-[#C9A227]/22 via-[#C9A227]/10 to-transparent blur-[90px] rounded-full animate-aurora-pulse"
         style={{ animationDuration: "8s", animationDelay: "2s" }}
       />
 
-      {/* Electric SKY Neon Aura (Top Right - reflecting the SKY Lounge neon sign) */}
+      {/* Warm Ambient Bronze Aura (Top Right) */}
       <div
-        className="absolute -top-16 right-[8%] w-[420px] h-[420px] bg-gradient-to-br from-[#38BDF8]/18 via-[#0284C7]/10 to-transparent blur-[110px] rounded-full animate-aurora-pulse"
+        className="absolute -top-16 right-[8%] w-[420px] h-[420px] bg-gradient-to-br from-[#A87545]/20 via-[#C8A875]/12 to-transparent blur-[110px] rounded-full animate-aurora-pulse"
         style={{ animationDuration: "7.5s", animationDelay: "1s" }}
       />
 
@@ -103,7 +103,7 @@ export function BarBackgroundAnimation({ className }: BarBackgroundAnimationProp
           <circle cx="120" cy="58" r="5" fill="#FFF7D6" opacity="0.7" />
           <circle cx="145" cy="62" r="3.5" fill="#FFF7D6" opacity="0.6" />
           {/* Neon Cocktail Glass Flanking */}
-          <path d="M220 180 L245 130 H265 L242 180 V210 H250 V215 H235 V210 H242 V180 Z" stroke="#38BDF8" strokeWidth="2" opacity="0.6" />
+          <path d="M220 180 L245 130 H265 L242 180 V210 H250 V215 H235 V210 H242 V180 Z" stroke="#C8A875" strokeWidth="2" opacity="0.6" />
           {/* Neon Light Rays */}
           <line x1="130" y1="35" x2="130" y2="48" stroke="#F5D28E" strokeWidth="2" strokeLinecap="round" />
           <line x1="75" y1="50" x2="85" y2="60" stroke="#F5D28E" strokeWidth="2" strokeLinecap="round" />
@@ -158,8 +158,8 @@ export function BarBackgroundAnimation({ className }: BarBackgroundAnimationProp
       {/* ----------------------------------------------------------------- */}
       {/* 5. LAYER: VIGNETTE SOFTENING                                      */}
       {/* ----------------------------------------------------------------- */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0E0C0A]/90 via-transparent to-[#0E0C0A]/90" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#120F0D] via-transparent to-[#120F0D]/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1C1917]/90 via-transparent to-[#1C1917]/90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917] via-transparent to-[#1C1917]/60" />
     </div>
   );
 }

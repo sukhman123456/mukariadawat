@@ -35,8 +35,8 @@ export function DawatLogo({
         <div
           aria-hidden="true"
           className={cn(
-            "pointer-events-none absolute rounded-full bg-gradient-to-tr from-[#D49B55]/20 via-[#F5D28E]/25 to-transparent blur-lg transition-all duration-500",
-            "group-hover:bg-[#D49B55]/40 group-hover:scale-130 group-hover:blur-xl",
+            "pointer-events-none absolute rounded-full bg-gradient-to-tr from-[#C9A227]/20 via-[#DFBF55]/25 to-transparent blur-lg transition-all duration-500",
+            "group-hover:bg-[#C9A227]/40 group-hover:scale-130 group-hover:blur-xl",
             size === "sm" && "size-10 sm:size-12 -inset-1",
             size === "md" && "size-14 sm:size-16 -inset-2",
             size === "lg" && "size-20 sm:size-24 -inset-3"
@@ -46,8 +46,8 @@ export function DawatLogo({
         <svg
           className={cn(
             "relative transition-transform duration-500 ease-out group-hover:scale-105",
-            "filter drop-shadow-[0_2px_10px_rgba(212,155,85,0.4)] group-hover:drop-shadow-[0_4px_18px_rgba(212,155,85,0.7)]",
-            size === "sm" && "w-9 h-9 sm:w-10 sm:h-10",
+            "filter drop-shadow-[0_2px_10px_rgba(201,162,39,0.4)] group-hover:drop-shadow-[0_4px_18px_rgba(201,162,39,0.7)]",
+            size === "sm" && "w-10 h-10 sm:w-11 sm:h-11",
             size === "md" && "w-13 h-13 sm:w-14 sm:h-14",
             size === "lg" && "w-18 h-18 sm:w-20 sm:h-20"
           )}
@@ -57,27 +57,27 @@ export function DawatLogo({
           aria-hidden="true"
         >
           <defs>
-            {/* Multi-tone 24k Royal Gold Metallic Gradient */}
+            {/* Multi-tone Royal Gold Metallic Gradient */}
             <linearGradient id="dawatGoldPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#FFFFFF" />
               <stop offset="15%" stopColor="#FFF2D1" />
-              <stop offset="35%" stopColor="#F8D48E" />
-              <stop offset="60%" stopColor="#D49B55" />
-              <stop offset="85%" stopColor="#A87027" />
-              <stop offset="100%" stopColor="#6E430F" />
+              <stop offset="35%" stopColor="#DFBF55" />
+              <stop offset="60%" stopColor="#C9A227" />
+              <stop offset="85%" stopColor="#9A7818" />
+              <stop offset="100%" stopColor="#5E4708" />
             </linearGradient>
 
             {/* Specular Bright Gold Highlight */}
             <linearGradient id="dawatGoldGleam" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#D49B55" />
+              <stop offset="0%" stopColor="#C9A227" />
               <stop offset="50%" stopColor="#FFF4D4" />
               <stop offset="100%" stopColor="#FFFFFF" />
             </linearGradient>
 
             {/* Saffron Steam Flame Gradient */}
             <linearGradient id="dawatFlameGlow" x1="50%" y1="100%" x2="50%" y2="0%">
-              <stop offset="0%" stopColor="#D49B55" stopOpacity="0.8" />
-              <stop offset="40%" stopColor="#FEE3A2" />
+              <stop offset="0%" stopColor="#C9A227" stopOpacity="0.85" />
+              <stop offset="40%" stopColor="#DFBF55" />
               <stop offset="85%" stopColor="#FFFFFF" />
               <stop offset="100%" stopColor="#FFFFFF" />
             </linearGradient>
@@ -85,8 +85,8 @@ export function DawatLogo({
             {/* Handi Bowl Inner Radial Sheen */}
             <radialGradient id="dawatBowlSheen" cx="50%" cy="38%" r="62%">
               <stop offset="0%" stopColor="#FFF3D6" stopOpacity="0.35" />
-              <stop offset="50%" stopColor="#D49B55" stopOpacity="0.12" />
-              <stop offset="100%" stopColor="#0B0907" stopOpacity="0" />
+              <stop offset="50%" stopColor="#C9A227" stopOpacity="0.12" />
+              <stop offset="100%" stopColor="#1C1917" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -162,7 +162,7 @@ export function DawatLogo({
           />
           {/* Royal Lotus Finial Knob */}
           <circle cx="30" cy="13" r="2.2" fill="url(#dawatGoldGleam)" />
-          <circle cx="30" cy="13" r="0.9" fill="#0B0907" />
+          <circle cx="30" cy="13" r="0.9" fill="#1C1917" />
 
           {/* 4. Ornate Brass Collar & Jeweled Waistband */}
           {/* Double-Rim Gilded Belt */}
@@ -246,7 +246,7 @@ export function DawatLogo({
             light
               ? "text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#FFFBF2] to-[#E5D2BA] group-hover:from-white group-hover:via-[#FFFFFF] group-hover:to-[#F5D28E]"
               : "text-stone-900 group-hover:text-black",
-            size === "sm" && "text-[18px] sm:text-[20px] tracking-[0.24em]",
+            size === "sm" && "text-[20px] xs:text-[21px] sm:text-[22px] tracking-[0.22em]",
             size === "md" && "text-[23px] sm:text-[26px] tracking-[0.26em]",
             size === "lg" && "text-[28px] sm:text-[34px] tracking-[0.28em]"
           )}
@@ -264,19 +264,19 @@ export function DawatLogo({
         >
           <span
             className={cn(
-              "h-[1px] bg-gradient-to-r from-transparent via-[#D49B55] to-[#F5D28E]",
-              size === "sm" && "w-3.5 sm:w-5",
+              "h-[1px] bg-gradient-to-r from-transparent via-[#C9A227] to-[#DFBF55]",
+              size === "sm" && "w-4 sm:w-5",
               size === "md" && "w-5 sm:w-7",
               size === "lg" && "w-7 sm:w-10"
             )}
           />
-          <span className="text-[#F5D28E] text-[7px] sm:text-[8px] leading-none select-none filter drop-shadow-[0_0_4px_rgba(245,210,142,0.6)]">
+          <span className="text-[#DFBF55] text-[7.5px] sm:text-[8px] leading-none select-none filter drop-shadow-[0_0_4px_rgba(201,162,39,0.6)]">
             ✦
           </span>
           <span
             className={cn(
-              "h-[1px] bg-gradient-to-l from-transparent via-[#D49B55] to-[#F5D28E]",
-              size === "sm" && "w-3.5 sm:w-5",
+              "h-[1px] bg-gradient-to-l from-transparent via-[#C9A227] to-[#DFBF55]",
+              size === "sm" && "w-4 sm:w-5",
               size === "md" && "w-5 sm:w-7",
               size === "lg" && "w-7 sm:w-10"
             )}
@@ -286,11 +286,11 @@ export function DawatLogo({
         {/* Subtitle "RESTAURANT" */}
         <span
           className={cn(
-            "font-display font-semibold uppercase leading-none transition-all duration-300 select-none",
-            "text-transparent bg-clip-text bg-gradient-to-r from-[#D49B55] via-[#FDE3B0] to-[#C08845]",
-            "group-hover:from-[#FDE3B0] group-hover:via-white group-hover:to-[#FDE3B0]",
+            "font-display font-bold uppercase leading-none transition-all duration-300 select-none",
+            "text-transparent bg-clip-text bg-gradient-to-r from-[#C9A227] via-[#DFBF55] to-[#B38D1B]",
+            "group-hover:from-[#DFBF55] group-hover:via-white group-hover:to-[#DFBF55]",
             "filter drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]",
-            size === "sm" && "text-[8.5px] sm:text-[9.5px] tracking-[0.38em]",
+            size === "sm" && "text-[9.5px] xs:text-[10px] sm:text-[10.5px] tracking-[0.38em]",
             size === "md" && "text-[10px] sm:text-[11px] tracking-[0.42em]",
             size === "lg" && "text-[12px] sm:text-[13px] tracking-[0.46em]"
           )}
@@ -302,7 +302,7 @@ export function DawatLogo({
         {shouldShowTagline && (
           <span
             className={cn(
-              "font-sans font-medium uppercase tracking-[0.24em] text-[#D49B55]/75 mt-1 transition-colors duration-300 group-hover:text-[#F5D28E]/95",
+              "font-sans font-medium uppercase tracking-[0.24em] text-[#C9A227]/85 mt-1 transition-colors duration-300 group-hover:text-[#DFBF55]",
               size === "sm" && "text-[7px]",
               size === "md" && "text-[7.5px] sm:text-[8px] hidden sm:block",
               size === "lg" && "text-[8.5px] sm:text-[9px] block"

@@ -58,26 +58,26 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg max-h-[90dvh] overflow-y-auto rounded-3xl border border-[#D49B55]/40 bg-gradient-to-b from-[#1E1914] via-[#14110E] to-black p-4 xs:p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95)] text-stone-200 animate-in zoom-in-95 duration-300"
+        className="relative w-full max-w-lg max-h-[92dvh] overflow-y-auto rounded-3xl border border-[#A87545]/40 bg-gradient-to-b from-[#1C1917] via-[#241B16] to-[#1C1917] p-4 xs:p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95)] text-[#F5EFE6] animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Ambient Top Glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-40 bg-[#D49B55]/20 blur-3xl"
+          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-40 bg-[#A87545]/20 blur-3xl"
         />
 
         {/* Header */}
-        <div className="flex items-start justify-between border-b border-stone-800 pb-3 sm:pb-4">
+        <div className="flex items-start justify-between border-b border-[#A87545]/20 pb-3 sm:pb-4">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D49B55]/40 bg-black/60 px-3 py-0.5 text-[10px] font-semibold tracking-wider text-[#D49B55] uppercase">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C8A875]/40 bg-black/60 px-3 py-0.5 text-[10px] font-semibold tracking-wider text-[#C8A875] uppercase">
               <Sparkles className="size-2.5" />
               {lang === "pa" ? "ਤੁਰੰਤ ਟੇਬਲ ਬੁਕਿੰਗ" : "Instant Table Reservation"}
             </span>
-            <h2 className="mt-2 font-display text-xl sm:text-3xl text-[#FAF5EE]">
+            <h2 className="mt-2 font-display text-xl sm:text-2xl text-[#F5EFE6]">
               {t("bookModalTitle")}
             </h2>
-            <p className="mt-1 text-xs text-stone-400">
+            <p className="mt-1 text-xs text-[#D8C8B8]">
               {t("bookModalSubtitle")}
             </p>
           </div>
@@ -86,7 +86,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="rounded-full border border-stone-800 p-2 text-stone-400 hover:bg-stone-900 hover:text-white transition-colors"
+            className="grid size-9 place-items-center rounded-full border border-[#A87545]/30 bg-[#241B16] text-[#D8C8B8] hover:bg-[#A87545]/20 hover:text-[#F5EFE6] transition-colors cursor-pointer"
           >
             <X className="size-4" />
           </button>
@@ -97,7 +97,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
           {/* Name & Phone */}
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
-              <label className="block text-stone-300 font-medium mb-1">
+              <label className="block text-[#D8C8B8] font-medium mb-1">
                 {t("nameLabel")} *
               </label>
               <input
@@ -106,11 +106,11 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Jaspreet Singh"
-                className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2.5 text-stone-100 placeholder:text-stone-600 focus:border-[#D49B55] focus:outline-none focus:ring-1 focus:ring-[#D49B55]/30 transition-all"
+                className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2.5 text-[#F5EFE6] placeholder:text-[#D8C8B8]/40 focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
               />
             </div>
             <div>
-              <label className="block text-stone-300 font-medium mb-1">
+              <label className="block text-[#D8C8B8] font-medium mb-1">
                 {t("phoneLabel")} *
               </label>
               <input
@@ -119,7 +119,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="e.g. 98765-XXXXX"
-                className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2.5 text-stone-100 placeholder:text-stone-600 focus:border-[#D49B55] focus:outline-none focus:ring-1 focus:ring-[#D49B55]/30 transition-all"
+                className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2.5 text-[#F5EFE6] placeholder:text-[#D8C8B8]/40 focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
               />
             </div>
           </div>
@@ -127,24 +127,24 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
           {/* Date & Time */}
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
-              <label className="block text-stone-300 font-medium mb-1">
+              <label className="block text-[#D8C8B8] font-medium mb-1">
                 {t("dateLabel")}
               </label>
               <input
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2.5 text-stone-100 focus:border-[#D49B55] focus:outline-none"
+                className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2.5 text-[#F5EFE6] focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
               />
             </div>
             <div>
-              <label className="block text-stone-300 font-medium mb-1">
+              <label className="block text-[#D8C8B8] font-medium mb-1">
                 {t("timeSlotLabel")}
               </label>
               <select
                 value={timeSlot}
                 onChange={(e) => setTimeSlot(e.target.value)}
-                className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2.5 text-stone-100 focus:border-[#D49B55] focus:outline-none"
+                className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2.5 text-[#F5EFE6] focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
               >
                 <option value="12:30 PM (Lunch)">12:30 PM (Lunch)</option>
                 <option value="1:30 PM (Lunch)">1:30 PM (Lunch)</option>
@@ -162,13 +162,13 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
           {/* Number of Guests & Seating Preference */}
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
-              <label className="block text-stone-300 font-medium mb-1">
+              <label className="block text-[#D8C8B8] font-medium mb-1">
                 {t("guestsLabel")}
               </label>
               <select
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-                className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2.5 text-stone-100 focus:border-[#D49B55] focus:outline-none"
+                className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2.5 text-[#F5EFE6] focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
               >
                 <option value="2 Guests">2 Guests (Couple)</option>
                 <option value="4 Guests">4 Guests (Family Table)</option>
@@ -179,13 +179,13 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
               </select>
             </div>
             <div>
-              <label className="block text-stone-300 font-medium mb-1">
+              <label className="block text-[#D8C8B8] font-medium mb-1">
                 {t("hallLabel")}
               </label>
               <select
                 value={hall}
                 onChange={(e) => setHall(e.target.value)}
-                className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2.5 text-stone-100 focus:border-[#D49B55] focus:outline-none"
+                className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2.5 text-[#F5EFE6] focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
               >
                 <option value="Family AC Dining Hall">{t("hallOptionDining")}</option>
                 <option value="SKY Lounge & Bar">{t("hallOptionSky")}</option>
@@ -196,7 +196,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
 
           {/* Optional notes */}
           <div>
-            <label className="block text-stone-300 font-medium mb-1">
+            <label className="block text-[#D8C8B8] font-medium mb-1">
               Special Requests (Birthday, high chair, spice preference)
             </label>
             <input
@@ -204,7 +204,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="e.g. Birthday anniversary, quiet corner table"
-              className="w-full rounded-xl border border-stone-800 bg-[#120F0D] px-3.5 py-2 text-stone-100 placeholder:text-stone-600 focus:border-[#D49B55] focus:outline-none"
+              className="w-full rounded-xl border border-[#A87545]/30 bg-[#1C1917] px-3.5 py-2 text-[#F5EFE6] placeholder:text-[#D8C8B8]/40 focus:border-[#C8A875] focus:outline-none focus:ring-1 focus:ring-[#C8A875]/30 transition-all text-sm sm:text-xs"
             />
           </div>
 
@@ -212,7 +212,7 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
           <div className="mt-6 flex flex-col gap-2.5 pt-2">
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 py-3 text-xs sm:text-sm font-bold text-white shadow-lg shadow-emerald-900/30 hover:scale-[1.02] active:scale-98 transition-all"
+              className="luxury-shimmer w-full min-h-[46px] inline-flex items-center justify-center gap-2 rounded-full bg-[#A87545] hover:bg-[#B98350] py-3 text-xs sm:text-sm font-bold text-[#F5EFE6] shadow-lg shadow-[#A87545]/25 hover:shadow-[0_0_20px_rgba(200,168,117,0.40)] hover:scale-[1.01] active:scale-98 transition-all cursor-pointer"
             >
               <WhatsAppIcon className="size-4" />
               <span>{t("bookViaWhatsapp")}</span>
@@ -220,14 +220,14 @@ export function BookTableModal({ isOpen, onClose }: BookTableModalProps) {
 
             <a
               href={site.phoneHref}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 bg-stone-900/70 py-2.5 text-xs font-semibold text-stone-200 hover:border-[#D49B55] hover:text-white transition-all"
+              className="w-full min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-[#A87545]/40 bg-[#241B16] py-2.5 text-xs font-semibold text-[#F5EFE6] hover:border-[#C8A875] hover:text-[#C8A875] transition-all"
             >
-              <Phone className="size-3.5 text-[#D49B55]" />
+              <Phone className="size-3.5 text-[#C8A875]" />
               <span>{t("callToBook")}: {site.phone}</span>
             </a>
           </div>
 
-          <p className="text-[11px] text-center text-stone-500 mt-2">
+          <p className="text-[11px] text-center text-[#D8C8B8] mt-2">
             ✦ Walk-ins are always welcomed on G.T. Road! Advance booking recommended for weekend dinners & groups.
           </p>
         </form>

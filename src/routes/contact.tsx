@@ -32,7 +32,7 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   return (
-    <div className="bg-[#0B0907] text-[#FAF5EE] selection:bg-[#D49B55] selection:text-stone-950 min-h-screen">
+    <div className="bg-[#1C1917] text-[#F5EFE6] selection:bg-[#A87545] selection:text-[#F5EFE6] min-h-screen">
       <PageHero
         badge="✦ PRIME HIGHWAY LOCATION"
         eyebrow="Visit & Inquire"
@@ -44,32 +44,32 @@ function Contact() {
 
       <section className="mx-auto max-w-[1360px] px-4 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 items-start">
-          {/* Left: Contact Card */}
+          {/* Left: Contact Card (Dark Coffee Card) */}
           <Reveal>
-            <div className="rounded-3xl border border-[#D49B55]/30 bg-gradient-to-b from-[#1C1713] via-[#14110E] to-black p-5 xs:p-7 sm:p-10 shadow-2xl backdrop-blur-xl">
-              <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#D49B55] uppercase block">
+            <div className="rounded-3xl border border-[#A87545]/30 bg-[#241B16] p-5 xs:p-7 sm:p-10 shadow-2xl backdrop-blur-xl text-[#F5EFE6]">
+              <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#C8A875] uppercase block">
                 ✦ OFFICIAL ADDRESS & REACH
               </span>
-              <h2 className="font-display text-2xl sm:text-3xl text-white mt-2">{site.name}</h2>
-              <p className="font-gurmukhi text-sm text-[#D49B55]/90 mt-1">
+              <h2 className="font-display text-2xl sm:text-3xl text-[#F5EFE6] mt-2">{site.name}</h2>
+              <p className="font-gurmukhi text-sm text-[#C8A875] mt-1">
                 {site.namePunjabi}
               </p>
-              <div className="mt-4 h-[1.5px] w-14 bg-gradient-to-r from-[#D49B55] to-transparent" />
+              <div className="mt-4 h-[1.5px] w-14 bg-gradient-to-r from-[#A87545] to-transparent" />
 
-              <address className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 text-xs sm:text-sm leading-relaxed text-stone-200 not-italic">
+              <address className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 text-xs sm:text-sm leading-relaxed text-[#D8C8B8] not-italic">
                 <p className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#D49B55]" aria-hidden="true" />
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#C8A875]" aria-hidden="true" />
                   <span>{site.address}</span>
                 </p>
                 <p className="flex items-center gap-3">
-                  <Phone className="size-4 shrink-0 text-[#D49B55]" aria-hidden="true" />
-                  <a href={site.phoneHref} className="hover:text-[#D49B55] transition-colors font-medium">
+                  <Phone className="size-4 shrink-0 text-[#C8A875]" aria-hidden="true" />
+                  <a href={site.phoneHref} className="hover:text-[#C8A875] text-[#F5EFE6] transition-colors font-medium">
                     {site.phone}
                   </a>
                 </p>
                 <p className="flex items-center gap-3">
-                  <Clock className="size-4 shrink-0 text-[#D49B55]" aria-hidden="true" />
-                  <span>Open Daily: 11:00 AM – 11:30 PM</span>
+                  <Clock className="size-4 shrink-0 text-[#C8A875]" aria-hidden="true" />
+                  <span className="text-[#D8C8B8]">Open Daily: 11:00 AM – 11:30 PM</span>
                 </p>
                 <p className="flex items-center gap-3">
                   <WhatsAppIcon className="size-4 shrink-0 text-emerald-400" aria-hidden="true" />
@@ -77,36 +77,36 @@ function Contact() {
                     href={site.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-emerald-400 transition-colors font-medium text-stone-200 truncate"
+                    className="hover:text-emerald-300 transition-colors font-medium text-[#D8C8B8] truncate"
                   >
                     WhatsApp: {site.whatsapp} ↗
                   </a>
                 </p>
                 <p className="flex items-center gap-3">
-                  <FacebookIcon className="size-4 shrink-0 text-[#38BDF8]" aria-hidden="true" />
+                  <FacebookIcon className="size-4 shrink-0 text-sky-400" aria-hidden="true" />
                   <a
                     href={site.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#38BDF8] transition-colors font-medium text-stone-200 truncate"
+                    className="hover:text-sky-300 transition-colors font-medium text-[#D8C8B8] truncate"
                   >
                     Facebook: {site.facebookHandle} ↗
                   </a>
                 </p>
                 <p className="flex items-center gap-3">
-                  <Globe className="size-4 shrink-0 text-[#D49B55]" aria-hidden="true" />
-                  <span className="text-stone-300">dawatrestaurant.in</span>
+                  <Globe className="size-4 shrink-0 text-[#C8A875]" aria-hidden="true" />
+                  <span className="text-[#D8C8B8]">dawatrestaurant.in</span>
                 </p>
               </address>
 
-              <dl className="mt-6 sm:mt-8 grid grid-cols-1 xs:grid-cols-2 gap-3 border-t border-stone-800 pt-5 sm:pt-6 text-xs">
-                <div className="rounded-xl border border-stone-800/90 bg-stone-900/40 p-3">
-                  <dt className="text-[10px] tracking-[0.2em] text-[#D49B55] uppercase font-bold">Services</dt>
-                  <dd className="mt-1 text-stone-300">Dine-in · Bar · Takeaway · Delivery</dd>
+              <dl className="mt-6 sm:mt-8 grid grid-cols-1 xs:grid-cols-2 gap-3 border-t border-[#A87545]/20 pt-5 sm:pt-6 text-xs">
+                <div className="rounded-xl border border-[#A87545]/20 bg-[#1C1917] p-3">
+                  <dt className="text-[10px] tracking-[0.2em] text-[#C8A875] uppercase font-bold">Services</dt>
+                  <dd className="mt-1 text-[#D8C8B8]">Dine-in · Bar · Takeaway · Delivery</dd>
                 </div>
-                <div className="rounded-xl border border-stone-800/90 bg-stone-900/40 p-3">
-                  <dt className="text-[10px] tracking-[0.2em] text-[#D49B55] uppercase font-bold">Pricing</dt>
-                  <dd className="mt-1 text-stone-300">{site.priceRange} / person</dd>
+                <div className="rounded-xl border border-[#A87545]/20 bg-[#1C1917] p-3">
+                  <dt className="text-[10px] tracking-[0.2em] text-[#C8A875] uppercase font-bold">Pricing</dt>
+                  <dd className="mt-1 text-[#D8C8B8]">{site.priceRange} / person</dd>
                 </div>
               </dl>
 
@@ -114,7 +114,7 @@ function Contact() {
               <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap">
                 <a
                   href={site.phoneHref}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] via-[#E5B869] to-[#C08845] px-4 sm:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-950 shadow-lg shadow-[#D49B55]/20 hover:scale-105 active:scale-95 transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#A87545] px-4 sm:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F5EFE6] hover:bg-[#B98350] shadow-md shadow-[#A87545]/20 hover:scale-105 active:scale-95 transition-all text-center"
                 >
                   <Phone className="size-3.5 sm:size-4" aria-hidden="true" /> <span>Call</span>
                 </a>
@@ -122,7 +122,7 @@ function Contact() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-emerald-800/60 bg-emerald-950/40 px-4 sm:px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-emerald-300 hover:bg-emerald-950/70 transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-4 sm:px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-emerald-300 hover:bg-emerald-500/20 transition-all text-center"
                 >
                   <WhatsAppIcon className="size-3.5 sm:size-4 text-emerald-400" /> <span>WhatsApp</span>
                 </a>
@@ -130,7 +130,7 @@ function Contact() {
                   href={site.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-sky-800/60 bg-sky-950/40 px-4 sm:px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-sky-300 hover:bg-sky-950/70 transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-sky-500/40 bg-sky-950/40 px-4 sm:px-6 py-3 text-xs sm:text-sm font-medium tracking-wide text-sky-300 hover:bg-sky-500/20 transition-all text-center"
                 >
                   <FacebookIcon className="size-3.5 sm:size-4 text-sky-400" /> <span>Facebook</span>
                 </a>
@@ -138,18 +138,18 @@ function Contact() {
                   href={site.directionsLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide text-stone-200 hover:border-[#D49B55] hover:text-white transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#A87545]/30 bg-[#1C1917] px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide text-[#F5EFE6] hover:border-[#C8A875] hover:text-[#C8A875] transition-all text-center shadow-sm"
                 >
-                  <Navigation className="size-3.5 sm:size-4 text-[#D49B55]" aria-hidden="true" /> <span>Directions</span>
+                  <Navigation className="size-3.5 sm:size-4 text-[#C8A875]" aria-hidden="true" /> <span>Directions</span>
                 </a>
               </div>
             </div>
           </Reveal>
 
-          {/* Right: Embedded Map in Luxury Dark Frame */}
+          {/* Right: Embedded Map in Luxury Frame */}
           <Reveal delay={120} className="w-full">
-            <div className="rounded-3xl border border-stone-800/90 p-2 sm:p-3.5 bg-gradient-to-b from-[#1C1713] to-black shadow-2xl">
-              <div className="overflow-hidden rounded-2xl border border-stone-800/80 bg-stone-950 min-h-[280px] sm:min-h-[420px]">
+            <div className="rounded-3xl border border-[#A87545]/30 p-2 sm:p-3.5 bg-[#241B16] shadow-2xl">
+              <div className="overflow-hidden rounded-2xl border border-[#A87545]/20 bg-[#1C1917] min-h-[280px] sm:min-h-[420px]">
                 <iframe
                   title="Map showing Dawat Restaurant on G.T. Road, Mukerian"
                   src={site.mapEmbed}
@@ -158,9 +158,9 @@ function Contact() {
                   className="size-full min-h-[280px] sm:min-h-[420px] w-full border-0"
                 />
               </div>
-              <div className="mt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 px-2 text-xs text-stone-400">
+              <div className="mt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 px-2 text-xs text-[#D8C8B8]">
                 <span>✦ Opposite P.W.D. Rest House, Mukerian</span>
-                <span className="text-[#D49B55]">Free Highway Parking Available</span>
+                <span className="text-[#C8A875] font-medium">Free Highway Parking Available</span>
               </div>
             </div>
           </Reveal>

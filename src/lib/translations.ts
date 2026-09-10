@@ -21,6 +21,7 @@ export const translations = {
     navContact: "Contact",
     navOrderOnline: "Order Online",
     navBookTable: "Book a Table",
+    book_a_table: "Book a Table",
 
     // Top Strip & Hours
     hoursNotice: "Open Daily: 11:00 AM – 11:30 PM",
@@ -85,6 +86,7 @@ export const translations = {
     navContact: "ਸੰਪਰਕ",
     navOrderOnline: "ਆਰਡਰ ਕਰੋ",
     navBookTable: "ਜਗ੍ਹਾ ਬੁੱਕ ਕਰੋ",
+    book_a_table: "ਟੇਬਲ ਬੁੱਕ ਕਰੋ",
 
     // Top Strip & Hours
     hoursNotice: "ਰੋਜ਼ਾਨਾ ਖੁੱਲ੍ਹਾ: ਸਵੇਰੇ 11:00 ਤੋਂ ਰਾਤ 11:30",

@@ -58,7 +58,7 @@ const signatureDishes = [
 
 function SpecialtiesPage() {
   return (
-    <div className="bg-[#0E0C0A] text-[#FAF5EE]">
+    <div className="bg-[#1C1917] text-[#F5EFE6] selection:bg-[#A87545] selection:text-[#F5EFE6]">
       <PageHero
         eyebrow="Our Culinary Heritage"
         title="Chef's Specialties"
@@ -66,54 +66,57 @@ function SpecialtiesPage() {
         bgImage={spicesBanner}
       />
 
-      {/* 3 Pillars */}
-      <section className="mx-auto max-w-[1360px] px-5 py-16 sm:py-20 lg:px-12 border-b border-stone-800/60">
-        <div className="grid gap-8 md:grid-cols-3">
-          <Reveal className="rounded-2xl border border-stone-800 bg-[#14110E] p-7">
-            <div className="grid size-12 place-items-center rounded-full bg-[#D49B55]/15 text-[#D49B55]">
-              <Flame className="size-6" />
-            </div>
-            <h3 className="mt-5 font-display text-xl text-[#FAF5EE]">The 400°C Clay Tandoor</h3>
-            <p className="mt-2 text-xs sm:text-sm text-stone-400 leading-relaxed">
-              Our traditional tandoor is cured daily with mustard oil and spinach water, creating the unmistakable smoky aroma in every naan and roti.
-            </p>
-          </Reveal>
+      {/* 3 Pillars - Warm Ivory Contrast Section */}
+      <section className="bg-[#F5EFE6] text-[#1C1917] py-12 sm:py-16 lg:py-20 border-b border-[#A87545]/15">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-12">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
+            <Reveal className="rounded-2xl border border-[#A87545]/20 bg-[#FAF7F2] p-5 sm:p-7 shadow-sm">
+              <div className="grid size-12 place-items-center rounded-full bg-[#A87545]/15 text-[#A87545]">
+                <Flame className="size-6" />
+              </div>
+              <h3 className="mt-5 font-display text-xl text-[#1C1917]">The 400°C Clay Tandoor</h3>
+              <p className="mt-2 text-xs sm:text-sm text-[#5A4D41] leading-relaxed">
+                Our traditional tandoor is cured daily with mustard oil and spinach water, creating the unmistakable smoky aroma in every naan and roti.
+              </p>
+            </Reveal>
 
-          <Reveal delay={100} className="rounded-2xl border border-stone-800 bg-[#14110E] p-7">
-            <div className="grid size-12 place-items-center rounded-full bg-[#D49B55]/15 text-[#D49B55]">
-              <Sparkles className="size-6" />
-            </div>
-            <h3 className="mt-5 font-display text-xl text-[#FAF5EE]">Slow-Simmered Handis</h3>
-            <p className="mt-2 text-xs sm:text-sm text-stone-400 leading-relaxed">
-              No shortcuts. Our curries develop their rich depth over hours of gentle simmering in heavy copper vessels, allowing the spices to mature naturally.
-            </p>
-          </Reveal>
+            <Reveal delay={100} className="rounded-2xl border border-[#A87545]/20 bg-[#FAF7F2] p-5 sm:p-7 shadow-sm">
+              <div className="grid size-12 place-items-center rounded-full bg-[#A87545]/15 text-[#A87545]">
+                <Sparkles className="size-6" />
+              </div>
+              <h3 className="mt-5 font-display text-xl text-[#1C1917]">Slow-Simmered Handis</h3>
+              <p className="mt-2 text-xs sm:text-sm text-[#5A4D41] leading-relaxed">
+                No shortcuts. Our curries develop their rich depth over hours of gentle simmering in heavy copper vessels, allowing the spices to mature naturally.
+              </p>
+            </Reveal>
 
-          <Reveal delay={200} className="rounded-2xl border border-stone-800 bg-[#14110E] p-7">
-            <div className="grid size-12 place-items-center rounded-full bg-[#D49B55]/15 text-[#D49B55]">
-              <Award className="size-6" />
-            </div>
-            <h3 className="mt-5 font-display text-xl text-[#FAF5EE]">Pure Punjab Dairy & Spices</h3>
-            <p className="mt-2 text-xs sm:text-sm text-stone-400 leading-relaxed">
-              Fresh paneer sourced daily, pure churned butter, and whole spices ground in-house ensure wholesome and unforgettable flavours.
-            </p>
-          </Reveal>
+            <Reveal delay={200} className="rounded-2xl border border-[#A87545]/20 bg-[#FAF7F2] p-5 sm:p-7 shadow-sm">
+              <div className="grid size-12 place-items-center rounded-full bg-[#A87545]/15 text-[#A87545]">
+                <Award className="size-6" />
+              </div>
+              <h3 className="mt-5 font-display text-xl text-[#1C1917]">Pure Punjab Dairy & Spices</h3>
+              <p className="mt-2 text-xs sm:text-sm text-[#5A4D41] leading-relaxed">
+                Fresh paneer sourced daily, pure churned butter, and whole spices ground in-house ensure wholesome and unforgettable flavours.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* Signature Dish Spotlights */}
-      <section className="py-20 lg:py-28">
-        <div className="mx-auto max-w-[1360px] px-5 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="font-sans text-xs font-semibold tracking-[0.25em] text-[#D49B55] uppercase">
+      {/* Signature Dish Spotlights - Dark Espresso Background (Rule 5) */}
+      <section className="bg-gradient-to-b from-[#1C1917] via-[#241B16] to-[#1C1917] py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+            <p className="font-sans text-xs font-semibold tracking-[0.25em] text-[#C8A875] uppercase">
               MASTERPIECES FROM OUR KITCHEN
             </p>
-            <h2 className="mt-2 font-display text-3xl sm:text-4xl text-[#FAF5EE]">
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl md:text-4xl text-[#F5EFE6]">
               Dishes You Won't Forget
             </h2>
+            <div className="mx-auto mt-4 h-0.5 w-16 bg-[#A87545]" />
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-10 sm:space-y-16">
             {signatureDishes.map((dish, i) => {
               const isEven = i % 2 === 1;
               return (
@@ -125,7 +128,7 @@ function SpecialtiesPage() {
                 >
                   {/* Dish Image */}
                   <div
-                    className={`overflow-hidden rounded-2xl shadow-2xl border border-stone-800 ${
+                    className={`overflow-hidden rounded-2xl shadow-2xl border border-[#A87545]/30 bg-[#241B16] ${
                       isEven ? "lg:col-start-2" : ""
                     }`}
                   >
@@ -141,31 +144,31 @@ function SpecialtiesPage() {
 
                   {/* Dish Details */}
                   <div className="flex flex-col justify-center">
-                    <p className="font-sans text-xs font-semibold tracking-[0.2em] text-[#D49B55] uppercase">
+                    <p className="font-sans text-xs font-semibold tracking-[0.2em] text-[#C8A875] uppercase">
                       {dish.tag}
                     </p>
-                    <h3 className="mt-3 font-display text-2xl sm:text-3xl lg:text-4xl text-[#FAF5EE]">
+                    <h3 className="mt-3 font-display text-2xl sm:text-3xl lg:text-4xl text-[#F5EFE6]">
                       {dish.name}
                     </h3>
-                    <p className="mt-4 font-sans text-sm sm:text-base text-stone-300/85 leading-relaxed">
+                    <p className="mt-4 font-sans text-sm sm:text-base text-[#D8C8B8] leading-relaxed">
                       {dish.desc}
                     </p>
-                    <div className="mt-6 rounded-xl border border-stone-800 bg-[#14110E] p-4 text-xs text-stone-400">
-                      <strong className="text-stone-200">Key Spices & Ingredients:</strong>{" "}
+                    <div className="mt-6 rounded-xl border border-[#A87545]/25 bg-[#241B16] p-4 text-xs text-[#D8C8B8]">
+                      <strong className="text-[#C8A875]">Key Spices & Ingredients:</strong>{" "}
                       {dish.spices}
                     </div>
                     <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                       <Link
                         to="/menu"
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D49B55] px-6 py-3 text-xs sm:text-sm font-medium text-stone-950 hover:bg-[#C08845] transition-colors text-center"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A87545] px-6 py-3 text-xs sm:text-sm font-semibold text-[#F5EFE6] hover:bg-[#B98350] transition-all shadow-md text-center"
                       >
                         Order on Menu <ArrowRight className="size-4" />
                       </Link>
                       <a
                         href={site.phoneHref}
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-700 px-6 py-3 text-xs sm:text-sm font-medium text-stone-300 hover:border-[#D49B55] hover:text-white transition-colors text-center"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#A87545]/40 bg-[#241B16] px-6 py-3 text-xs sm:text-sm font-semibold text-[#F5EFE6] hover:border-[#C8A875] hover:text-[#C8A875] transition-all text-center shadow-sm"
                       >
-                        <Phone className="size-3.5" /> Call: {site.phone}
+                        <Phone className="size-3.5 text-[#C8A875]" /> Call: {site.phone}
                       </a>
                     </div>
                   </div>

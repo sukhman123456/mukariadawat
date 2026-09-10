@@ -5,7 +5,7 @@ export function SectionHeading({
   title,
   intro,
   align = "left",
-  tone = "dark",
+  tone = "light",
   className,
 }: {
   eyebrow?: string;
@@ -15,6 +15,8 @@ export function SectionHeading({
   tone?: "dark" | "light";
   className?: string;
 }) {
+  const isDark = tone === "dark";
+
   return (
     <div
       className={cn(
@@ -24,16 +26,22 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <p className="eyebrow text-[#D49B55] tracking-[0.25em] font-semibold">
+        <p className={cn("eyebrow tracking-[0.25em] font-semibold text-xs uppercase", isDark ? "text-[#D4AF37]" : "text-[#B47A46]")}>
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-3 font-display text-3xl leading-tight sm:text-4xl text-[#FAF5EE]">
+      <h2 className={cn("mt-3 font-display text-3xl leading-tight sm:text-4xl", isDark ? "text-[#FAF7F2]" : "text-[#1C1917]")}>
         {title}
       </h2>
-      <div className={cn("mt-5 h-[1.5px] w-14 bg-gradient-to-r from-[#D49B55] to-transparent", align === "center" && "mx-auto")} />
+      <div
+        className={cn(
+          "mt-5 h-[1.5px] w-14",
+          isDark ? "bg-gradient-to-r from-[#D4AF37] to-transparent" : "bg-gradient-to-r from-[#B47A46] to-transparent",
+          align === "center" && "mx-auto"
+        )}
+      />
       {intro ? (
-        <p className="mt-5 text-base leading-relaxed text-stone-300/85">
+        <p className={cn("mt-5 text-sm sm:text-base leading-relaxed", isDark ? "text-[#C4B9AD]" : "text-[#786A5E]")}>
           {intro}
         </p>
       ) : null}

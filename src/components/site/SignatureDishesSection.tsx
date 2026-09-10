@@ -82,32 +82,38 @@ export function SignatureDishesSection() {
   const { lang, t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-[#0F0C0A] py-20 lg:py-28 border-t border-stone-800/80">
-      <div className="relative mx-auto max-w-[1360px] px-5 lg:px-12">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#1C1917] via-[#241B16] to-[#1C1917] py-12 sm:py-16 lg:py-24 border-t border-[#A87545]/20 text-[#F5EFE6]">
+      {/* Subtle warm bronze background aura */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-[#A87545]/5 blur-[140px]"
+      />
+
+      <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-12">
         {/* Top Eyebrow & Title */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-semibold tracking-[0.25em] text-[#D49B55] uppercase inline-flex items-center gap-2">
-            <Award className="size-3.5 text-[#D49B55]" />
+          <span className="text-[11px] font-semibold tracking-[0.25em] text-[#C8A875] uppercase inline-flex items-center gap-2">
+            <Award className="size-3.5 text-[#C8A875]" />
             {lang === "pa" ? "ਸਾਡੀ ਰਸੋਈ ਦੀ ਪਛਾਣ" : "TIMELESS CULINARY HERITAGE"}
           </span>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#FAF5EE]">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#F5EFE6]">
             {t("signature_dishes_title")}
           </h2>
-          <p className="mt-4 text-xs sm:text-sm text-stone-300/80 leading-relaxed">
+          <p className="mt-4 text-xs sm:text-sm text-[#D8C8B8] leading-relaxed">
             {t("signature_dishes_desc")}
           </p>
         </div>
 
         {/* 4 Cards Grid - 2x2 Layout on Desktop for Premium Depth */}
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 lg:grid-cols-2">
           {signatureList.map((dish, idx) => (
             <div
               key={dish.id}
-              className="group relative overflow-hidden rounded-3xl border border-stone-800 bg-gradient-to-br from-[#1A1511] via-[#130F0D] to-[#0D0B0A] p-5 sm:p-6 shadow-2xl transition-all duration-500 hover:border-[#D49B55]/60 hover:shadow-[#D49B55]/10"
+              className="group relative overflow-hidden rounded-3xl border border-[#A87545]/25 bg-[#241B16] p-5 sm:p-6 shadow-xl transition-all duration-500 hover:border-[#A87545]/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1"
             >
               <div className="grid sm:grid-cols-[1.1fr_1.4fr] gap-5 items-center">
                 {/* Dish Photo */}
-                <div className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-stone-900 shadow-lg">
+                <div className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-black shadow-md border border-[#A87545]/20">
                   <img
                     src={dish.image}
                     alt={dish.titleEn}
@@ -117,15 +123,15 @@ export function SignatureDishesSection() {
                     decoding="async"
                     className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-80" />
 
                   {/* Top floating index */}
-                  <span className="absolute top-3 left-3 rounded-full bg-black/80 border border-stone-700 px-2.5 py-0.5 text-[10px] font-mono text-[#D49B55] backdrop-blur-md">
+                  <span className="absolute top-3 left-3 rounded-full bg-[#1C1917]/90 border border-[#A87545]/40 px-2.5 py-0.5 text-[10px] font-mono text-[#C8A875] backdrop-blur-md shadow-sm">
                     0{idx + 1}
                   </span>
 
                   {/* Price Tag */}
-                  <span className="absolute bottom-3 right-3 rounded-lg bg-black/90 border border-[#D49B55]/40 px-3 py-1 text-xs font-bold text-[#E5B869] backdrop-blur-md shadow-lg">
+                  <span className="absolute bottom-3 right-3 rounded-lg bg-[#151210] border border-[#A87545]/40 px-3 py-1 text-xs font-bold text-[#F5EFE6] backdrop-blur-md shadow-lg">
                     {dish.price}
                   </span>
                 </div>
@@ -133,26 +139,26 @@ export function SignatureDishesSection() {
                 {/* Dish Narrative */}
                 <div className="flex flex-col justify-between h-full">
                   <div>
-                    <span className="inline-block rounded-full bg-[#D49B55]/10 border border-[#D49B55]/30 px-3 py-0.5 text-[10px] font-semibold text-[#D49B55] mb-2">
+                    <span className="inline-block rounded-full bg-[#A87545]/15 border border-[#A87545]/30 px-3 py-0.5 text-[10px] font-semibold text-[#C8A875] mb-2">
                       {lang === "pa" ? dish.highlightPa : dish.highlightEn}
                     </span>
 
-                    <h3 className="font-display text-xl font-medium text-stone-100 group-hover:text-[#D49B55] transition-colors leading-snug">
+                    <h3 className="font-display text-xl font-medium text-[#F5EFE6] group-hover:text-[#C8A875] transition-colors leading-snug">
                       {lang === "pa" ? dish.titlePa : dish.titleEn}
                     </h3>
 
-                    <p className="mt-2.5 text-xs text-stone-300/80 leading-relaxed">
+                    <p className="mt-2.5 text-xs text-[#D8C8B8] leading-relaxed">
                       {lang === "pa" ? dish.descPa : dish.descEn}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-stone-800/80 flex items-center justify-between">
-                    <span className="text-[11px] text-stone-400 font-medium">
+                  <div className="mt-4 pt-4 border-t border-[#A87545]/20 flex items-center justify-between">
+                    <span className="text-[11px] text-[#D8C8B8]/80 font-medium">
                       ✦ {dish.speciality}
                     </span>
                     <Link
                       to="/menu"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#D49B55] hover:text-[#FAF5EE] transition-colors"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#C8A875] hover:text-[#F5EFE6] transition-colors"
                     >
                       <span>{lang === "pa" ? "ਮੇਨੂ ਵੇਖੋ" : "View Menu"}</span>
                       <ArrowRight className="size-3.5" />
@@ -165,17 +171,17 @@ export function SignatureDishesSection() {
         </div>
 
         {/* Bottom Guarantee Banner */}
-        <div className="mt-12 rounded-2xl border border-stone-800 bg-[#14100D] p-5 sm:p-6 text-center flex flex-wrap items-center justify-around gap-6">
-          <div className="flex items-center gap-3 text-stone-300 text-xs sm:text-sm">
-            <Flame className="size-5 text-[#D49B55] shrink-0" />
+        <div className="mt-12 rounded-2xl border border-[#A87545]/25 bg-[#241B16] p-5 sm:p-6 text-center flex flex-wrap items-center justify-around gap-6 shadow-lg">
+          <div className="flex items-center gap-3 text-[#F5EFE6] text-xs sm:text-sm">
+            <Flame className="size-5 text-[#A87545] shrink-0" />
             <span>{lang === "pa" ? "ਅਸਲੀ ਲੱਕੜ ਦੇ ਕੋਲਿਆਂ ਵਾਲਾ ਤੰਦੂਰ" : "100% Charcoal Tandoor Baked"}</span>
           </div>
-          <div className="flex items-center gap-3 text-stone-300 text-xs sm:text-sm">
+          <div className="flex items-center gap-3 text-[#F5EFE6] text-xs sm:text-sm">
             <ShieldCheck className="size-5 text-emerald-400 shrink-0" />
             <span>{lang === "pa" ? "ਸ਼ੁੱਧ ਤੇ ਤਾਜ਼ੀ ਕੁਆਲਿਟੀ ਸਮੱਗਰੀ" : "Fresh Daily Farm Sourced Ingredients"}</span>
           </div>
-          <div className="flex items-center gap-3 text-stone-300 text-xs sm:text-sm">
-            <HeartHandshake className="size-5 text-[#E5B869] shrink-0" />
+          <div className="flex items-center gap-3 text-[#F5EFE6] text-xs sm:text-sm">
+            <HeartHandshake className="size-5 text-[#A87545] shrink-0" />
             <span>{lang === "pa" ? "ਨਿੱਘੀ ਪਰਿਵਾਰਕ ਪੰਜਾਬੀ ਮਹਿਮਾਨਨਿਵਾਜ਼ੀ" : "Generous Family Portions & Hospitality"}</span>
           </div>
         </div>

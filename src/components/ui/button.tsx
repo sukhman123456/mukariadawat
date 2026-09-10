@@ -9,13 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        default:
+          "bg-[#A87545] text-[#F5EFE6] font-semibold shadow-md hover:bg-[#B98350] hover:shadow-[0_0_20px_rgba(200,168,117,0.40)] active:scale-[0.98] transition-all",
+        destructive:
+          "bg-[#8B2626] text-[#F5EFE6] border border-[#6F1D1D]/60 shadow-sm hover:bg-[#A32D2D] hover:shadow-[0_0_15px_rgba(139,38,38,0.4)] transition-all",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border border-[#A87545]/40 bg-transparent text-[#F5EFE6] shadow-sm hover:border-[#C8A875] hover:bg-[#A87545]/15 hover:text-[#C8A875] hover:shadow-[0_0_15px_rgba(200,168,117,0.2)] transition-all",
+        secondary:
+          "border border-[#A87545]/25 bg-[#241B16] text-[#F5EFE6] shadow-sm hover:border-[#C8A875] hover:bg-[#A87545]/15 hover:text-[#C8A875] hover:shadow-[0_0_15px_rgba(200,168,117,0.2)] transition-all",
+        ghost: "text-[#F5EFE6] hover:bg-[#A87545]/10 hover:text-[#C8A875] transition-all",
+        link: "text-[#A87545] underline-offset-4 hover:underline hover:text-[#C8A875] transition-colors",
       },
       size: {
         default: "h-9 px-4 py-2",

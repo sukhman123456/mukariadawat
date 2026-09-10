@@ -135,7 +135,7 @@ function Gallery() {
   const activeItem = lightboxIndex !== null ? items[lightboxIndex] : null;
 
   return (
-    <div className="bg-[#0B0907] text-[#FAF5EE]">
+    <div className="bg-[#1C1917] text-[#F5EFE6] selection:bg-[#A87545] selection:text-[#F5EFE6] min-h-screen">
       <PageHero
         title="Photo Gallery"
         subtitle="Inside Dawat & The SKY Lounge"
@@ -152,7 +152,7 @@ function Gallery() {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === "Enter" && setLightboxIndex(i)}
-                className="group relative overflow-hidden rounded-2xl border border-stone-800 bg-[#14110E] transition-all duration-300 hover:border-[#D49B55]/60 hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#D49B55] shadow-lg"
+                className="group relative overflow-hidden rounded-2xl border border-[#A87545]/25 bg-[#241B16] transition-all duration-300 hover:border-[#A87545]/60 hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#A87545] shadow-xl hover:shadow-[0_12px_40px_rgba(0,0,0,0.6)]"
               >
                 <div className="overflow-hidden aspect-[16/11] relative">
                   <img
@@ -164,20 +164,20 @@ function Gallery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
                   {/* Expand icon pill */}
-                  <span className="absolute bottom-3 right-3 grid size-8 place-items-center rounded-full bg-black/70 text-[#D49B55] border border-stone-700/80 backdrop-blur-md opacity-90 group-hover:scale-110 transition-transform">
+                  <span className="absolute bottom-3 right-3 grid size-8 place-items-center rounded-full bg-black/70 text-[#C8A875] border border-[#C8A875]/40 backdrop-blur-md opacity-90 group-hover:scale-110 transition-transform">
                     <Maximize2 className="size-3.5" />
                   </span>
 
                   {/* Tag Pill */}
-                  <span className="absolute top-3 left-3 rounded-full bg-black/70 border border-stone-700/80 px-2.5 py-0.5 text-[10px] font-semibold text-[#D49B55] backdrop-blur-md">
+                  <span className="absolute top-3 left-3 rounded-full bg-[#1C1917]/90 border border-[#A87545]/40 px-2.5 py-0.5 text-[10px] font-semibold text-[#C8A875] backdrop-blur-md shadow-sm">
                     {item.tag}
                   </span>
                 </div>
-                <figcaption className="p-3.5 sm:p-4 flex items-center justify-between border-t border-stone-800/80 bg-[#120F0D]">
-                  <span className="font-sans text-xs font-semibold tracking-wider text-stone-200">
+                <figcaption className="p-3.5 sm:p-4 flex items-center justify-between border-t border-[#A87545]/20 bg-[#241B16]">
+                  <span className="font-sans text-xs font-semibold tracking-wider text-[#F5EFE6]">
                     {item.caption}
                   </span>
-                  <span className="text-[10px] text-[#D49B55] uppercase tracking-widest font-mono">Dawat</span>
+                  <span className="text-[10px] text-[#C8A875] uppercase tracking-widest font-mono">Dawat</span>
                 </figcaption>
               </figure>
             </Reveal>
@@ -197,18 +197,18 @@ function Gallery() {
         >
           {/* Top Bar: Counter & Close Button */}
           <div className="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-8 flex items-center justify-between z-30 pointer-events-none">
-            <div className="inline-flex items-center gap-2 rounded-full bg-black/80 border border-stone-800 px-3.5 py-1 text-xs font-mono text-stone-300 pointer-events-auto backdrop-blur-md">
-              <span className="text-[#D49B55] font-bold">{lightboxIndex + 1}</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#241B16]/90 border border-[#A87545]/30 px-3.5 py-1 text-xs font-mono text-[#F5EFE6] pointer-events-auto backdrop-blur-md">
+              <span className="text-[#C8A875] font-bold">{lightboxIndex + 1}</span>
               <span>/</span>
               <span>{items.length}</span>
-              <span className="text-stone-500">·</span>
-              <span className="text-emerald-400 font-sans text-[11px]">{activeItem.tag}</span>
+              <span className="text-[#D8C8B8]/50">·</span>
+              <span className="text-[#C8A875] font-sans text-[11px]">{activeItem.tag}</span>
             </div>
 
             <button
               type="button"
               onClick={() => setLightboxIndex(null)}
-              className="grid size-10 sm:size-11 place-items-center rounded-full bg-black/85 border border-stone-800 text-white hover:text-[#D49B55] hover:border-[#D49B55] transition-all cursor-pointer pointer-events-auto shadow-2xl touch-target"
+              className="grid size-10 sm:size-11 place-items-center rounded-full bg-[#241B16]/90 border border-[#A87545]/30 text-[#F5EFE6] hover:text-[#C8A875] hover:border-[#C8A875] transition-all cursor-pointer pointer-events-auto shadow-2xl touch-target"
               aria-label="Close lightbox"
             >
               <X className="size-5" />
@@ -222,7 +222,7 @@ function Gallery() {
               e.stopPropagation();
               prevPhoto();
             }}
-            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 grid size-9 sm:size-12 place-items-center rounded-full bg-black/85 border border-stone-800 text-stone-300 hover:text-white hover:border-[#D49B55] hover:scale-105 transition-all cursor-pointer shadow-2xl"
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 grid size-9 sm:size-12 place-items-center rounded-full bg-[#241B16]/90 border border-[#A87545]/30 text-[#F5EFE6] hover:text-[#C8A875] hover:border-[#C8A875] hover:scale-105 transition-all cursor-pointer shadow-2xl"
             aria-label="Previous image"
           >
             <ChevronLeft className="size-5 sm:size-6" />
@@ -235,7 +235,7 @@ function Gallery() {
               e.stopPropagation();
               nextPhoto();
             }}
-            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 grid size-9 sm:size-12 place-items-center rounded-full bg-black/85 border border-stone-800 text-stone-300 hover:text-white hover:border-[#D49B55] hover:scale-105 transition-all cursor-pointer shadow-2xl"
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 grid size-9 sm:size-12 place-items-center rounded-full bg-[#241B16]/90 border border-[#A87545]/30 text-[#F5EFE6] hover:text-[#C8A875] hover:border-[#C8A875] hover:scale-105 transition-all cursor-pointer shadow-2xl"
             aria-label="Next image"
           >
             <ChevronRight className="size-5 sm:size-6" />
@@ -247,7 +247,7 @@ function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image Box */}
-            <div className="relative max-h-[58vh] sm:max-h-[72vh] w-full flex items-center justify-center overflow-hidden rounded-2xl border border-stone-800 bg-stone-950 shadow-2xl">
+            <div className="relative max-h-[58vh] sm:max-h-[72vh] w-full flex items-center justify-center overflow-hidden rounded-2xl border border-[#A87545]/30 bg-black shadow-2xl">
               <img
                 src={activeItem.src}
                 alt={activeItem.alt}
@@ -256,18 +256,18 @@ function Gallery() {
             </div>
 
             {/* Caption bar */}
-            <div className="mt-3 w-full rounded-2xl border border-stone-800/80 bg-[#14110E]/95 p-3.5 sm:p-4 text-left flex items-center justify-between gap-3 backdrop-blur-md">
+            <div className="mt-3 w-full rounded-2xl border border-[#A87545]/25 bg-[#241B16]/95 p-3.5 sm:p-4 text-left flex items-center justify-between gap-3 backdrop-blur-md">
               <div>
-                <span className="text-[10px] font-semibold text-[#D49B55] uppercase tracking-wider block">
+                <span className="text-[10px] font-semibold text-[#C8A875] uppercase tracking-wider block">
                   ✦ {activeItem.tag}
                 </span>
-                <h3 className="text-sm sm:text-base font-display text-white mt-0.5">
+                <h3 className="text-sm sm:text-base font-display text-[#F5EFE6] mt-0.5">
                   {activeItem.caption}
                 </h3>
               </div>
               <a
                 href={site.phoneHref}
-                className="rounded-full bg-[#D49B55] px-4 py-1.5 text-xs font-semibold text-stone-950 hover:bg-[#C08845] transition-colors whitespace-nowrap shrink-0"
+                className="rounded-full bg-[#A87545] px-4 py-1.5 text-xs font-semibold text-[#F5EFE6] hover:bg-[#B98350] transition-colors whitespace-nowrap shrink-0 shadow-sm"
               >
                 Call to Reserve
               </a>
@@ -282,8 +282,8 @@ function Gallery() {
                   onClick={() => setLightboxIndex(idx)}
                   className={`relative size-12 sm:size-14 rounded-lg overflow-hidden border transition-all shrink-0 cursor-pointer ${
                     lightboxIndex === idx
-                      ? "border-[#D49B55] scale-105 shadow-md shadow-[#D49B55]/30"
-                      : "border-stone-800 opacity-60 hover:opacity-100 hover:border-stone-600"
+                      ? "border-[#A87545] scale-105 shadow-md shadow-[#A87545]/30"
+                      : "border-[#A87545]/20 opacity-60 hover:opacity-100 hover:border-[#A87545]/50"
                   }`}
                 >
                   <img src={item.src} alt={item.alt} className="size-full object-cover" />
@@ -296,4 +296,3 @@ function Gallery() {
     </div>
   );
 }
-

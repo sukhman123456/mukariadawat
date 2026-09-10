@@ -93,7 +93,7 @@ function FAQPage() {
   });
 
   return (
-    <div className="bg-[#0E0C0A] text-[#FAF5EE]">
+    <div className="bg-[#1C1917] text-[#F5EFE6] selection:bg-[#A87545] selection:text-[#F5EFE6]">
       <PageHero
         eyebrow="Visitor Guide"
         title="Frequently Asked Questions"
@@ -101,98 +101,110 @@ function FAQPage() {
         bgImage={realSkyLounge}
       />
 
-      <section className="mx-auto max-w-[1100px] px-4 py-12 sm:py-20 lg:px-8">
-        {/* Search & Categories */}
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-6 sm:pb-8 border-b border-[#D49B55]/20">
-          {/* Category Tabs */}
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 w-full md:w-auto">
-            {["All", "Dining", "Food", "Delivery", "Events"].map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCat(cat)}
-                className={`shrink-0 rounded-full px-4 sm:px-5 py-1.5 text-xs font-medium transition-all ${
-                  activeCat === cat
-                    ? "bg-gradient-to-r from-[#D49B55] to-[#E5B869] text-stone-950 font-semibold shadow-md shadow-[#D49B55]/20"
-                    : "border border-stone-800 bg-[#14110E] text-stone-300 hover:border-[#D49B55]/40 hover:text-white"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Box */}
-          <div className="relative w-full md:w-72">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search questions..."
-              className="w-full rounded-full border border-[#D49B55]/20 bg-[#14110E] pl-9 pr-4 py-2 text-xs text-stone-200 placeholder:text-stone-500 focus:border-[#D49B55] focus:outline-none focus:ring-1 focus:ring-[#D49B55]/30 transition-all"
-            />
-            <Search className="absolute left-3 top-2.5 size-3.5 text-stone-500" />
-          </div>
-        </div>
-
-        {/* FAQ Accordion List */}
-        <div className="mt-8 divide-y divide-stone-800/80">
-          {filteredFaqs.map((faq, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <Reveal key={faq.q} className="py-5">
+      {/* Main FAQ - Warm Ivory Contrast Section */}
+      <section className="bg-[#F5EFE6] text-[#1C1917] py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-[1100px] px-4 lg:px-8">
+          {/* Search & Categories */}
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-6 sm:pb-8 border-b border-[#A87545]/20">
+            {/* Category Tabs */}
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 w-full md:w-auto">
+              {["All", "Dining", "Food", "Delivery", "Events"].map((cat) => (
                 <button
+                  key={cat}
                   type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between text-left gap-4 group cursor-pointer"
+                  onClick={() => setActiveCat(cat)}
+                  className={`shrink-0 rounded-full px-4 sm:px-5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                    activeCat === cat
+                      ? "bg-[#A87545] text-[#F5EFE6] shadow-md shadow-[#A87545]/25 scale-[1.02]"
+                      : "border border-[#A87545]/25 bg-[#FAF7F2] text-[#5A4D41] hover:border-[#A87545] hover:text-[#1C1917]"
+                  }`}
                 >
-                  <span className="font-display text-base sm:text-lg text-[#FAF5EE] group-hover:text-[#D49B55] transition-colors">
-                    {faq.q}
-                  </span>
-                  <span
-                    className={`grid size-7 shrink-0 place-items-center rounded-full border border-stone-800 bg-[#14110E] transition-all duration-300 ${
-                      isOpen ? "rotate-180 border-[#D49B55] text-[#D49B55] bg-[#D49B55]/10 shadow-sm shadow-[#D49B55]/20" : "text-stone-400 group-hover:border-stone-700"
-                    }`}
-                  >
-                    <ChevronDown className="size-4" />
-                  </span>
+                  {cat}
                 </button>
+              ))}
+            </div>
 
-                {isOpen && (
-                  <p className="mt-3 font-sans text-xs sm:text-sm text-stone-300/80 leading-relaxed max-w-3xl animate-in fade-in duration-200">
-                    {faq.a}
-                  </p>
-                )}
-              </Reveal>
-            );
-          })}
-        </div>
-
-        {/* Still Have Questions Box */}
-        <div className="mt-16 rounded-3xl border border-[#D49B55]/25 bg-gradient-to-br from-[#1A1613] via-[#14110E] to-[#120F0D] p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden">
-          <div className="pointer-events-none absolute -right-20 -bottom-20 size-60 rounded-full bg-[#D49B55]/10 blur-3xl" />
-          <div className="mx-auto grid size-16 place-items-center rounded-full bg-[#D49B55]/15 text-[#D49B55] border border-[#D49B55]/30">
-            <HelpCircle className="size-8" />
+            {/* Search Box */}
+            <div className="relative w-full md:w-72">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search questions..."
+                className="w-full rounded-full border border-[#A87545]/25 bg-white pl-9 pr-4 py-2 text-xs text-[#1C1917] placeholder:text-[#5A4D41]/60 focus:border-[#A87545] focus:outline-none focus:ring-1 focus:ring-[#A87545]/30 transition-all shadow-sm"
+              />
+              <Search className="absolute left-3 top-2.5 size-3.5 text-[#A87545]" />
+            </div>
           </div>
-          <h3 className="mt-4 font-display text-2xl text-[#FAF5EE]">
-            Still have a question?
-          </h3>
-          <p className="mt-2 text-xs sm:text-sm text-stone-300 max-w-md mx-auto">
-            Our team in Mukerian is always ready to assist you with special requests, custom menus, and directions.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4 relative">
-            <a
-              href={site.phoneHref}
-              className="luxury-shimmer inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] to-[#E5B869] px-6 py-2.5 text-xs sm:text-sm font-semibold text-stone-950 transition-all hover:shadow-lg hover:shadow-[#D49B55]/20"
-            >
-              <Phone className="size-4" /> Call {site.phone}
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-[#D49B55]/40 px-6 py-2.5 text-xs sm:text-sm font-medium text-[#E5B869] hover:bg-[#D49B55]/10 hover:border-[#D49B55] transition-all"
-            >
-              Visit Location <ArrowRight className="size-4" />
-            </Link>
+
+          {/* FAQ Accordion List - Dark Coffee Cards on Warm Ivory */}
+          <div className="mt-8 space-y-4">
+            {filteredFaqs.map((faq, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <Reveal
+                  key={faq.q}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? "bg-[#241B16] border-[#A87545] shadow-xl text-[#F5EFE6]"
+                      : "bg-[#241B16] border-[#A87545]/20 shadow-md text-[#F5EFE6] hover:border-[#A87545]/50"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between text-left gap-4 p-5 sm:p-6 group cursor-pointer"
+                  >
+                    <span className="font-display text-base sm:text-lg text-[#F5EFE6] group-hover:text-[#C8A875] transition-colors">
+                      {faq.q}
+                    </span>
+                    <span
+                      className={`grid size-8 shrink-0 place-items-center rounded-full border transition-all duration-300 ${
+                        isOpen
+                          ? "rotate-180 border-[#A87545] text-[#F5EFE6] bg-[#A87545]"
+                          : "border-[#A87545]/30 bg-[#1C1917] text-[#C8A875] group-hover:border-[#A87545]"
+                      }`}
+                    >
+                      <ChevronDown className="size-4" />
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-5 pb-6 sm:px-6 font-sans text-xs sm:text-sm text-[#D8C8B8] leading-relaxed border-t border-[#A87545]/20 pt-4 animate-in fade-in duration-200">
+                      {faq.a}
+                    </div>
+                  )}
+                </Reveal>
+              );
+            })}
+          </div>
+
+          {/* Still Have Questions Box - Dark Espresso / Coffee Hero Card */}
+          <div className="mt-12 sm:mt-16 rounded-3xl border border-[#A87545]/35 bg-[#241B16] p-5 sm:p-12 text-center shadow-2xl relative overflow-hidden text-[#F5EFE6]">
+            <div className="pointer-events-none absolute -right-20 -bottom-20 size-60 rounded-full bg-[#A87545]/10 blur-3xl" />
+            <div className="mx-auto grid size-14 sm:size-16 place-items-center rounded-full bg-[#A87545]/20 text-[#C8A875] border border-[#A87545]/40">
+              <HelpCircle className="size-7 sm:size-8" />
+            </div>
+            <h3 className="mt-4 font-display text-xl sm:text-2xl text-[#F5EFE6]">
+              Still have a question?
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-[#D8C8B8] max-w-md mx-auto leading-relaxed">
+              Our team in Mukerian is always ready to assist you with special requests, custom menus, and directions.
+            </p>
+            <div className="mt-6 flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 relative">
+              <a
+                href={site.phoneHref}
+                className="w-full xs:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#A87545] px-6 py-2.5 text-xs sm:text-sm font-semibold text-[#F5EFE6] hover:bg-[#B98350] transition-all hover:shadow-lg hover:shadow-[#A87545]/30"
+              >
+                <Phone className="size-4" /> Call {site.phone}
+              </a>
+              <Link
+                to="/contact"
+                className="w-full xs:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-[#A87545]/40 bg-[#1C1917] px-6 py-2.5 text-xs sm:text-sm font-semibold text-[#F5EFE6] hover:border-[#C8A875] hover:text-[#C8A875] transition-all shadow-sm"
+              >
+                Visit Location <ArrowRight className="size-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

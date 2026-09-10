@@ -22,32 +22,32 @@ import { site } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-[75vh] items-center justify-center bg-[#0B0907] px-4 py-16 text-center text-[#FAF5EE]">
-      <div className="relative max-w-lg rounded-3xl border border-[#D49B55]/30 bg-gradient-to-b from-[#181310] via-[#120F0D] to-[#0A0908] p-8 sm:p-12 shadow-2xl shadow-black/80">
+    <div className="flex min-h-[75vh] items-center justify-center bg-[#FAF7F2] px-4 py-16 text-center text-[#1C1917]">
+      <div className="relative max-w-lg rounded-3xl border border-[#B47A46]/30 bg-[#1C1917] p-8 sm:p-12 shadow-2xl shadow-black/80 text-[#FAF7F2]">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 size-40 rounded-full bg-[#D49B55]/15 blur-2xl"
+          className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 size-40 rounded-full bg-[#B47A46]/15 blur-2xl"
         />
 
         {/* Top Gold Badge */}
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D49B55]/40 bg-black/60 px-3.5 py-1 text-xs font-semibold text-[#D49B55]">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D4AF37]/40 bg-black/60 px-3.5 py-1 text-xs font-semibold text-[#D4AF37]">
           ✦ 404 ERROR · PAGE NOT FOUND ✦
         </span>
 
         {/* 404 Large Heading */}
-        <h1 className="mt-5 font-display text-7xl font-normal tracking-tight text-[#FAF5EE]">
-          4<span className="text-[#D49B55]">0</span>4
+        <h1 className="mt-5 font-display text-7xl font-normal tracking-tight text-[#FAF7F2]">
+          4<span className="text-[#D4AF37]">0</span>4
         </h1>
 
-        <p className="mt-2 font-gurmukhi text-base text-[#D49B55]">
+        <p className="mt-2 font-gurmukhi text-base text-[#D4AF37]">
           ਮੁਆਫ਼ ਕਰਨਾ, ਇਹ ਪੰਨਾ ਨਹੀਂ ਮਿਲਿਆ।
         </p>
 
-        <h2 className="mt-3 font-display text-xl sm:text-2xl text-stone-200">
+        <h2 className="mt-3 font-display text-xl sm:text-2xl text-[#FAF7F2]">
           Looks Like This Dish Isn't on the Menu
         </h2>
 
-        <p className="mt-3 text-xs sm:text-sm text-stone-400 leading-relaxed max-w-md mx-auto">
+        <p className="mt-3 text-xs sm:text-sm text-[#C4B9AD] leading-relaxed max-w-md mx-auto">
           The page you requested doesn't exist or has moved. Let's take you back to our royal tandoori feast or help you explore our authentic dishes.
         </p>
 
@@ -55,23 +55,23 @@ function NotFoundComponent() {
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
-            className="luxury-shimmer inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D49B55] via-[#E5B869] to-[#C08845] px-6 py-3 text-xs font-bold uppercase tracking-wider text-stone-950 shadow-lg shadow-[#D49B55]/20 hover:scale-105 active:scale-95 transition-all"
+            className="luxury-shimmer inline-flex items-center gap-2 rounded-full bg-[#B47A46] hover:bg-[#C88B54] hover:shadow-[0_0_20px_rgba(212,175,55,0.35)] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#FAF7F2] shadow-lg shadow-[#B47A46]/20 hover:scale-105 active:scale-95 transition-all"
           >
             <HomeIcon className="size-3.5" />
             <span>Return to Home</span>
           </Link>
           <Link
             to="/menu"
-            className="inline-flex items-center gap-2 rounded-full border border-stone-700 bg-stone-900/80 px-6 py-3 text-xs font-semibold text-stone-200 hover:border-[#D49B55] hover:text-white transition-all"
+            className="inline-flex items-center gap-2 rounded-full border border-[#B47A46]/40 bg-[#24201D] px-6 py-3 text-xs font-semibold text-[#FAF7F2] hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all"
           >
-            <UtensilsCrossed className="size-3.5 text-[#D49B55]" />
+            <UtensilsCrossed className="size-3.5 text-[#D4AF37]" />
             <span>Browse Full Menu</span>
           </Link>
           <a
             href={site.phoneHref}
-            className="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-black/60 px-5 py-3 text-xs font-medium text-stone-300 hover:text-white transition-all"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-3 text-xs font-medium text-[#C4B9AD] hover:text-white transition-all"
           >
-            <Phone className="size-3 text-[#D49B55]" />
+            <Phone className="size-3 text-[#D4AF37]" />
             <span>Call: {site.phone}</span>
           </a>
         </div>
@@ -88,10 +88,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-[65vh] items-center justify-center bg-[#0B0907] px-4 py-16 text-center text-[#FAF5EE]">
-      <div className="max-w-md rounded-3xl border border-stone-800 bg-[#14100E] p-8 shadow-2xl">
-        <h1 className="font-display text-2xl text-[#FAF5EE]">This page encountered an issue</h1>
-        <p className="mt-3 text-xs sm:text-sm text-stone-400">
+    <div className="flex min-h-[65vh] items-center justify-center bg-[#FAF7F2] px-4 py-16 text-center text-[#1C1917]">
+      <div className="max-w-md rounded-3xl border border-[#B47A46]/20 bg-[#1C1917] p-8 shadow-2xl text-[#FAF7F2]">
+        <h1 className="font-display text-2xl text-[#FAF7F2]">This page encountered an issue</h1>
+        <p className="mt-3 text-xs sm:text-sm text-[#C4B9AD]">
           Something went wrong on our end. You can try refreshing or head back to the restaurant home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -100,15 +100,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="luxury-shimmer inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#D49B55] to-[#C08845] px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-950 transition-all hover:scale-105"
+            className="luxury-shimmer inline-flex items-center justify-center rounded-full bg-[#B47A46] hover:bg-[#C88B54] hover:shadow-[0_0_20px_rgba(212,175,55,0.35)] px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#FAF7F2] transition-all hover:scale-105"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-stone-700 bg-stone-900 px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-200 transition-colors hover:bg-stone-800"
+            className="inline-flex items-center justify-center rounded-full border border-[#B47A46]/40 bg-[#24201D] px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#FAF7F2] transition-colors hover:border-[#D4AF37] hover:text-[#D4AF37]"
           >
-            Go home
+            Return Home
           </a>
         </div>
       </div>
@@ -121,7 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#0B0907" },
+      { name: "theme-color", content: "#1C1917" },
       { title: "Dawat Restaurant & SKY Lounge — North Indian Restaurant in Mukerian" },
       {
         name: "description",
@@ -153,11 +153,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <HeadContent />
       </head>
-      <body className="bg-[#0B0907] text-[#FAF5EE] antialiased">
+      <body className="bg-[#1C1917] text-[#F5EFE6] antialiased">
         {children}
         <Scripts />
       </body>
@@ -173,7 +173,7 @@ function RootComponent() {
       <LanguageProvider>
         <div className="flex min-h-screen flex-col overflow-x-clip">
           <Header />
-          <main className="flex-1 pb-20 lg:pb-0">
+          <main className="flex-1">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />
           </main>
